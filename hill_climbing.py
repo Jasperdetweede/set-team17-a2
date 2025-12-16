@@ -46,6 +46,18 @@ def compute_fitness(
 # 2. MUTATION FUNCTION
 # ============================================================
 
+def generate_additive_noise_neighbour(seed: np.ndarray, epsilon: float) -> np.ndarray:
+    neighbour = seed.copy()
+    h, w, c = seed.shape
+    limit = 255 * epsilon
+    noise = np.random.uniform(-limit, limit, (h, w, c))
+    neighbour = np.clip(neighbour + noise, 0, 255)
+    return neighbour
+
+def L_constraint(seed: np.ndarray, neighbor: np.ndarray, epsilon: float) -> bool:
+    diff = np.abs(neighbor - seed)
+    return np.all(diff <= 255 * epsilon)
+
 def mutate_seed(
     seed: np.ndarray,
     epsilon: float
@@ -81,10 +93,13 @@ def mutate_seed(
         List[np.ndarray]: mutated neighbors
     """
 
-    # TODO (student)
-    raise NotImplementedError("mutate_seed must be implemented by the student.")
+    neighbors = []
 
+    neighbour_additive_noise = generate_additive_noise_neighbour(seed, epsilon)
+    if L_constraint(seed, neighbour_additive_noise, epsilon):
+        neighbors.append(neighbour_additive_noise)
 
+    return neighbors
 
 # ============================================================
 # 3. SELECT BEST CANDIDATE

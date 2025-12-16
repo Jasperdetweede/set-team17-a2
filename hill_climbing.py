@@ -11,9 +11,12 @@ DO NOT change function signatures.
 """
 
 import json
+import os.path
+
 import numpy as np
 import matplotlib.pyplot as plt
 from typing import List, Tuple
+
 from keras.applications import vgg16
 from keras.applications.imagenet_utils import decode_predictions
 from keras.utils import array_to_img, load_img, img_to_array
@@ -122,7 +125,7 @@ def select_best(
     Returns:
         (best_image, best_fitness)
     """
-
+    # TODO Based on the chosen neighbour, change the mutation description in the report at the end of the file.
     # TODO (student)
     raise NotImplementedError("select_best must be implemented by the student.")
 
@@ -173,45 +176,69 @@ if __name__ == "__main__":
     with open("data/image_labels.json") as f:
         image_list = json.load(f)
 
-    # Pick first entry
-    item = image_list[0]
-    image_path = "images/" + item["image"]
-    target_label = item["label"]
+    if not os.path.exists("hc_results"):
+        os.makedirs("hc_results")
 
-    print(f"Loaded image: {image_path}")
-    print(f"Target label: {target_label}")
+    EPSILON = 0.30
+    ITERATIONS = 300
 
-    img = load_img(image_path)
-    plt.imshow(img)
-    plt.title("Original image")
-    plt.show()
+    for i, item in enumerate(image_list):
+        filename = item["image"]
+        image_path = "images/" + filename
+        target_label = item["label"]
 
-    img_array = img_to_array(img)
-    seed = img_array.copy()
+        print(f"Loaded image: {image_path}")
+        print(f"Target label: {target_label}")
 
-    # Print baseline top-5 predictions
-    print("\nBaseline predictions (top-5):")
-    preds = model.predict(np.expand_dims(seed, axis=0))
-    for cl in decode_predictions(preds, top=5)[0]:
-        print(f"{cl[1]:20s}  prob={cl[2]:.5f}")
+        img = load_img(image_path)
+        img_array = img_to_array(img)
+        seed = img_array.copy()
 
-    # Run hill climbing attack
-    final_img, final_fitness = hill_climb(
-        initial_seed=seed,
-        model=model,
-        target_label=target_label,
-        epsilon=0.30,
-        iterations=300
-    )
+        print("\nBaseline predictions (top-5):")
+        preds = model.predict(np.expand_dims(seed, axis=0))
+        for cl in decode_predictions(preds, top=5)[0]:
+            print(f"{cl[1]:20s}  prob={cl[2]:.5f}")
 
-    print("\nFinal fitness:", final_fitness)
+        final_img, final_fitness = hill_climb(
+            initial_seed=seed,
+            model=model,
+            target_label=target_label,
+            epsilon=EPSILON,
+            iterations=ITERATIONS
+        )
 
-    plt.imshow(array_to_img(final_img))
-    plt.title(f"Adversarial Result — fitness={final_fitness:.4f}")
-    plt.show()
+        print("\nFinal fitness:", final_fitness)
 
-    # Print final predictions
-    final_preds = model.predict(np.expand_dims(final_img, axis=0))
-    print("\nFinal predictions:")
-    for cl in decode_predictions(final_preds, top=5)[0]:
-        print(cl)
+        final_preds = model.predict(np.expand_dims(final_img, axis=0))
+        print("\nFinal predictions:")
+        for cl in decode_predictions(final_preds, top=5)[0]:
+            print(cl)
+
+        # Save results
+        original_save_path = f"hc_results/{filename}_original.png"
+        array_to_img(img_array).save(original_save_path)
+
+        adversarial_save_path = f"hc_results/{filename}_adversarial.png"
+        array_to_img(final_img).save(adversarial_save_path)
+
+        report_details = {
+            "original_image": original_save_path,
+            "adversarial_image": adversarial_save_path,
+            "target_label": target_label,
+            "epsilon": EPSILON,
+            "iterations": ITERATIONS,
+            "original_prediction": {
+                "label": decode_predictions(preds, top=1)[0][0][1],
+                "score": float(decode_predictions(preds, top=1)[0][0][2])
+            },
+            "final_prediction": {
+                "label": decode_predictions(final_preds, top=1)[0][0][1],
+                "score": float(decode_predictions(final_preds, top=1)[0][0][2])
+            },
+            "final_fitness": final_fitness,
+            "mutation": "CHANGE BASED ON CHOSEN MUTATION"
+        }
+
+        report_path = f"hc_results/{filename}_report.json"
+        with open(report_path, "w") as f:
+            json.dump(report_details, f, indent=4)

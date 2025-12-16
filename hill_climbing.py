@@ -225,17 +225,17 @@ if __name__ == "__main__":
             "original_image": original_save_path,
             "adversarial_image": adversarial_save_path,
             "target_label": target_label,
-            "epsilon": EPSILON,
-            "iterations": ITERATIONS,
+            "epsilon": float(EPSILON),
+            "iterations": int(ITERATIONS),
             "original_prediction": {
-                "label": decode_predictions(preds, top=1)[0][0][1],
+                "label": str(decode_predictions(preds, top=1)[0][0][1]),
                 "score": float(decode_predictions(preds, top=1)[0][0][2])
             },
             "final_prediction": {
-                "label": decode_predictions(final_preds, top=1)[0][0][1],
+                "label": str(decode_predictions(final_preds, top=1)[0][0][1]),
                 "score": float(decode_predictions(final_preds, top=1)[0][0][2])
             },
-            "final_fitness": final_fitness,
+            "final_fitness": float(final_fitness),
             "mutation": "CHANGE BASED ON CHOSEN MUTATION"
         }
 

@@ -66,6 +66,28 @@ def channel_specific_peturbation_neighbor(seed: np.ndarray, epsilon: float) -> n
         neighbour[:, :, channel] = np.clip(neighbour[:, :, channel] + noise, 0, 255)
     return neighbour
 
+def generate_line_stripe_neighbour(seed: np.ndarray, epsilon: float, num_lines: int = 3, width: int = 3) -> np.ndarray:
+    neighbour = seed.copy()
+    h, w, c = seed.shape
+    limit = 255 * epsilon
+
+    X, Y = np.meshgrid(np.arange(w), np.arange(h))
+
+    for _ in range(num_lines):
+        slope = np.random.uniform(-5.0, 5.0)
+        intercept = np.random.uniform(0, h) - slope * (0.5 * w) 
+
+        # compute distance from line y = slope * x + intercept
+        dist = np.abs(Y - (slope * X + intercept))
+        mask = dist <= width  # boolean mask where line affects
+
+        # generate random perturbation for masked pixels
+        delta = np.random.uniform(-limit, limit, size=(h, w, c))
+        for ch in range(c):
+            neighbour[:, :, ch] = np.where(mask, np.clip(neighbour[:, :, ch] + delta[:, :, ch], 0, 255), neighbour[:, :, ch])
+
+    return neighbour
+
 def L_constraint(seed: np.ndarray, neighbor: np.ndarray, epsilon: float) -> bool:
     diff = np.abs(neighbor - seed)
     return np.all(diff <= 255 * epsilon)
@@ -114,6 +136,10 @@ def mutate_seed(
     neighbour_channel_perturbation = channel_specific_peturbation_neighbor(seed, epsilon)
     if L_constraint(seed, neighbour_channel_perturbation, epsilon):
         neighbors.append(neighbour_channel_perturbation)
+
+    line_stripe_neighbour = generate_line_stripe_neighbour(seed, epsilon, num_lines=5, width=2)
+    if L_constraint(seed, line_stripe_neighbour, epsilon):
+        neighbors.append(line_stripe_neighbour)
 
     return neighbors
 

@@ -41,8 +41,15 @@ def compute_fitness(
               fitness = -probability(predicted_label)
     """
 
-    # TODO (student)
-    raise NotImplementedError("compute_fitness must be implemented by the student.")
+    preds = model.predict(np.expand_dims(image_array, axis=0))
+    labeled_preds = decode_predictions(preds, top=1)[0]
+
+    # Case 1: The model correctly predicted the target label
+    if labeled_preds[0][1] == target_label:
+        return labeled_preds[0][2]
+
+    # Case 2: The model missclassified
+    return - labeled_preds[0][2]
 
 
 # ============================================================

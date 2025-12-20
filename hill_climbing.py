@@ -20,6 +20,7 @@ from typing import List, Tuple
 from keras.applications import vgg16
 from keras.applications.imagenet_utils import decode_predictions
 from keras.utils import array_to_img, load_img, img_to_array
+from scipy.ndimage import gaussian_filter
 
 
 # ============================================================
@@ -62,6 +63,18 @@ def generate_additive_noise_neighbour(seed: np.ndarray, epsilon: float) -> np.nd
     limit = 255 * epsilon
     noise = np.random.uniform(-limit, limit, (h, w, c))
     neighbour = np.clip(neighbour + noise, 0, 255)
+    return neighbour
+
+def generate_local_masking_neighbour(seed: np.ndarray, epsilon: float) -> np.ndarray:
+    print(type(seed[0][0][0]))
+    neighbour = gaussian_filter(seed, sigma=(1.0, 1.0, 0.0))
+    neighbour = neighbour.astype(np.int64)
+
+    limit = 255 * epsilon
+    mask = np.abs(neighbour - seed) < limit
+    neighbour = neighbour.astype(np.float32)
+    neighbour = np.where(mask, neighbour, seed)
+
     return neighbour
 
 def L_constraint(seed: np.ndarray, neighbor: np.ndarray, epsilon: float) -> bool:
@@ -108,6 +121,10 @@ def mutate_seed(
     neighbour_additive_noise = generate_additive_noise_neighbour(seed, epsilon)
     if L_constraint(seed, neighbour_additive_noise, epsilon):
         neighbors.append(neighbour_additive_noise)
+
+    neighbour_local_masking = generate_local_masking_neighbour(seed, epsilon)
+    if L_constraint(seed, neighbour_local_masking, epsilon):
+        neighbors.append(neighbour_local_masking)
 
     return neighbors
 

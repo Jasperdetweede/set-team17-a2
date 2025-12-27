@@ -20,6 +20,7 @@ from typing import List, Tuple
 from keras.applications import vgg16
 from keras.applications.imagenet_utils import decode_predictions
 from keras.utils import array_to_img, load_img, img_to_array
+from scipy.ndimage import gaussian_filter
 
 
 # ============================================================
@@ -41,8 +42,15 @@ def compute_fitness(
               fitness = -probability(predicted_label)
     """
 
-    # TODO (student)
-    raise NotImplementedError("compute_fitness must be implemented by the student.")
+    preds = model.predict(np.expand_dims(image_array, axis=0))
+    labeled_preds = decode_predictions(preds, top=1)[0]
+
+    # Case 1: The model correctly predicted the target label
+    if labeled_preds[0][1] == target_label:
+        return labeled_preds[0][2]
+
+    # Case 2: The model missclassified
+    return - labeled_preds[0][2]
 
 
 # ============================================================
@@ -56,6 +64,16 @@ def generate_additive_noise_neighbour(seed: np.ndarray, epsilon: float) -> np.nd
     noise = np.random.uniform(-limit, limit, (h, w, c))
     neighbour = np.clip(neighbour + noise, 0, 255)
     return neighbour
+
+def generate_local_masking_neighbour(seed: np.ndarray, epsilon: float) -> np.ndarray:
+    print(type(seed[0][0][0]))
+    neighbour = gaussian_filter(seed, sigma=(1.0, 1.0, 0.0))
+    neighbour = neighbour.astype(np.int64)
+
+    limit = 255 * epsilon
+    mask = np.abs(neighbour - seed) < limit
+    neighbour = neighbour.astype(np.float32)
+    neighbour = np.where(mask, neighbour, seed)
 
 def channel_specific_peturbation_neighbor(seed: np.ndarray, epsilon: float) -> np.ndarray:
     neighbour = seed.copy()
@@ -132,6 +150,10 @@ def mutate_seed(
     neighbour_additive_noise = generate_additive_noise_neighbour(seed, epsilon)
     if L_constraint(seed, neighbour_additive_noise, epsilon):
         neighbors.append(neighbour_additive_noise)
+
+    neighbour_local_masking = generate_local_masking_neighbour(seed, epsilon)
+    if L_constraint(seed, neighbour_local_masking, epsilon):
+        neighbors.append(neighbour_local_masking)
 
     neighbour_channel_perturbation = channel_specific_peturbation_neighbor(seed, epsilon)
     if L_constraint(seed, neighbour_channel_perturbation, epsilon):

@@ -21,6 +21,7 @@ from keras.applications import vgg16
 from keras.applications.imagenet_utils import decode_predictions
 from keras.utils import array_to_img, load_img, img_to_array
 from scipy.ndimage import gaussian_filter
+from collections import Counter
 
 
 # ============================================================
@@ -42,7 +43,7 @@ def compute_fitness(
               fitness = -probability(predicted_label)
     """
 
-    preds = model.predict(np.expand_dims(image_array, axis=0))
+    preds = model.predict(np.expand_dims(image_array, axis=0), verbose=0)
     labeled_preds = decode_predictions(preds, top=1)[0]
 
     # Case 1: The model correctly predicted the target label
@@ -143,29 +144,27 @@ def mutate_seed(
         epsilon (float): allowed perturbation budget
 
     Returns:
-        List[np.ndarray]: mutated neighbours
+        Tuple[List[np.ndarray], List[str]]: mutated neighbours and their names
     """
-
     neighbours = []
 
+    #  WARNING: DO NOT CHANGE THE ORDER OF THE MUTATIONS BELOW
+
     neighbour_additive_noise = generate_additive_noise_neighbour(seed, epsilon)
-    if L_constraint(seed, neighbour_additive_noise, epsilon):
-        neighbours.append(neighbour_additive_noise)
+    neighbours.append(neighbour_additive_noise)
 
     neighbour_local_masking = generate_local_masking_neighbour(seed, epsilon)
-    if L_constraint(seed, neighbour_local_masking, epsilon):
-        neighbours.append(neighbour_local_masking)
+    neighbours.append(neighbour_local_masking)
 
     neighbour_channel_perturbation = channel_specific_perturbation_neighbour(seed, epsilon)
-    if L_constraint(seed, neighbour_channel_perturbation, epsilon):
-        neighbours.append(neighbour_channel_perturbation)
+    neighbours.append(neighbour_channel_perturbation)
 
     stripe_width = int(len(seed[0]) * 0.05)
     line_stripe_neighbour = generate_line_stripe_neighbour(seed, epsilon, num_lines=10, width=stripe_width)
-    if L_constraint(seed, line_stripe_neighbour, epsilon):
-        neighbours.append(line_stripe_neighbour)
+    neighbours.append(line_stripe_neighbour)
 
     return neighbours
+
 
 
 # ============================================================
@@ -238,17 +237,29 @@ def hill_climb(
     
     no_improvement_count = 0
 
+    mutation_history = []
+
     for iteration in range(iterations):
         # Generate neighbours
-        neighbours = mutate_seed(current_image, epsilon)
-        neighbours.append(current_image)
+        mutation_names = ["Additive Noise", "Local Masking", "Channel Perturbation", "Line Stripe"]
+        neighbours = mutate_seed(initial_seed, epsilon)
+        assert len(neighbours) == len(mutation_names), "Mismatch between mutation names and generated neighbours"
+
+        neighbours = {name: img for name, img in zip(mutation_names, neighbours)}
+        neighbours["Current Image"] = current_image
 
         # Remove i from neighbours if it violates L constraint relative to initial_seed
-        neighbours = [n for n in neighbours if L_constraint(initial_seed, n, epsilon)]
+        valid_neighbours: dict = {name: img for name, img in neighbours.items() 
+                                  if L_constraint(initial_seed, img, epsilon) 
+                                #   and L_constraint(current_image, img, epsilon)
+                                  }
+        
+        valid_neighbours_values = list(valid_neighbours.values())
 
-        # Select the best candidate
-        candidate_image, candidate_fitness = select_best(neighbours, model, target_label)
+        # Select the best candidate 
+        candidate_image, candidate_fitness = select_best(valid_neighbours_values, model, target_label)        
 
+        # Update current image if fitness improved
         if candidate_fitness < current_fitness:
             current_image = candidate_image
             current_fitness = candidate_fitness
@@ -258,8 +269,22 @@ def hill_climb(
             if current_fitness < best_fitness:
                 best_image = current_image.copy()
                 best_fitness = current_fitness
+
+            # Record mutation used
+            for i, (name, img) in enumerate(valid_neighbours.items()):  
+                if np.array_equal(img, candidate_image):
+                    mutation_history.append(name)
+                    break
+                if i == len(valid_neighbours) - 1:
+                    mutation_history.append("If you see this message, something went wrong")
+
         else:
             no_improvement_count += 1
+            
+            if (len(valid_neighbours) == 1): 
+                mutation_history.append("No valid mutations")
+            else: 
+                mutation_history.append("No better mutations")
         
         # Stopping conditions
         if no_improvement_count >= 40: # can be adjusted
@@ -272,6 +297,14 @@ def hill_climb(
         if predicted_class != target_label and predicted_confidence >= 0.9:
             break
 
+        if iteration % 10 == 0 or iteration == iterations - 1:
+            print(f"Hill Climb Progress: iteration {iteration+1}/{iterations}", end="\r")
+
+    # Print mutation history in JSON format
+    # This was done here because we are not allowed to change function signature
+    print("Mutation counts: \n", Counter(mutation_history), "\n")
+
+    # Return best found image and its fitness
     return best_image, best_fitness
 
 
@@ -335,6 +368,10 @@ if __name__ == "__main__":
         adversarial_save_path = f"hc_results/{filename}_adversarial.png"
         array_to_img(final_img).save(adversarial_save_path)
 
+        # Calculate metrics 
+        avg_of_changed_pixels = np.mean(np.abs(final_img - seed)) / 255
+        num_changed_pixels = np.count_nonzero(np.subtract(final_img, seed)) / np.size(seed) 
+
         # Store results of the hill climber in JSON format
         report_details = {
             "original_image": original_save_path,
@@ -342,16 +379,19 @@ if __name__ == "__main__":
             "target_label": target_label,
             "epsilon": float(EPSILON),
             "iterations": int(ITERATIONS),
-            "original_prediction": {
+            "original_prediction": { 
                 "label": str(decode_predictions(preds, top=1)[0][0][1]),
                 "score": float(decode_predictions(preds, top=1)[0][0][2])
             },
             "final_prediction": {
                 "label": str(decode_predictions(final_preds, top=1)[0][0][1]),
-                "score": float(decode_predictions(final_preds, top=1)[0][0][2])
+                "score": float(decode_predictions(final_preds, top=1)[0][0][2]),
+                "average_of_pixel_changes": float(avg_of_changed_pixels),
+                "number_of_changed_pixels": float(num_changed_pixels)
             },
             "final_fitness": float(final_fitness),
-            "mutation": "CHANGE BASED ON CHOSEN MUTATION"
+            "success": bool(decode_predictions(final_preds, top=1)[0][0][1] != target_label),
+            "mutation history": "See terminal output; cannot change function signature"
         }
 
         report_path = f"hc_results/{filename}_report.json"

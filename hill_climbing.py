@@ -66,16 +66,16 @@ def generate_additive_noise_neighbour(seed: np.ndarray, epsilon: float) -> np.nd
     return neighbour
 
 def generate_local_masking_neighbour(seed: np.ndarray, epsilon: float) -> np.ndarray:
-    print(type(seed[0][0][0]))
     neighbour = gaussian_filter(seed, sigma=(1.0, 1.0, 0.0))
-    neighbour = neighbour.astype(np.int64)
+    neighbour = neighbour.astype(np.float32)
 
     limit = 255 * epsilon
     mask = np.abs(neighbour - seed) < limit
-    neighbour = neighbour.astype(np.float32)
     neighbour = np.where(mask, neighbour, seed)
+    neighbour = np.clip(neighbour, 0, 255)
+    return neighbour
 
-def channel_specific_peturbation_neighbor(seed: np.ndarray, epsilon: float) -> np.ndarray:
+def channel_specific_perturbation_neighbour(seed: np.ndarray, epsilon: float) -> np.ndarray:
     neighbour = seed.copy()
     h, w, c = seed.shape
     limit = 255 * epsilon
@@ -102,20 +102,21 @@ def generate_line_stripe_neighbour(seed: np.ndarray, epsilon: float, num_lines: 
         # generate random perturbation for masked pixels
         delta = np.random.uniform(-limit, limit, size=(h, w, c))
         for ch in range(c):
-            neighbour[:, :, ch] = np.where(mask, np.clip(neighbour[:, :, ch] + delta[:, :, ch], 0, 255), neighbour[:, :, ch])
+            clipped  = np.clip(neighbour[:, :, ch] + delta[:, :, ch], 0, 255)
+            neighbour[:, :, ch] = np.where(mask, clipped, neighbour[:, :, ch])
 
     return neighbour
 
-def L_constraint(seed: np.ndarray, neighbor: np.ndarray, epsilon: float) -> bool:
-    diff = np.abs(neighbor - seed)
-    return np.all(diff <= 255 * epsilon)
+def L_constraint(seed: np.ndarray, neighbour: np.ndarray, epsilon: float) -> bool:
+    diff = np.abs(np.subtract(neighbour, seed))
+    return bool(np.all(diff <= 255 * epsilon))
 
 def mutate_seed(
     seed: np.ndarray,
     epsilon: float
 ) -> List[np.ndarray]:
     """
-    Produce ANY NUMBER of mutated neighbors.
+    Produce ANY NUMBER of mutated neighbours.
 
     Students may implement ANY mutation strategy:
         - modify 1 pixel
@@ -125,15 +126,15 @@ def mutate_seed(
         - gaussian noise (clipped)
         - etc.
 
-    BUT EVERY neighbor must satisfy the L∞ constraint:
+    BUT EVERY neighbour must satisfy the L∞ constraint:
 
         For all pixels i,j,c:
-            |neighbor[i,j,c] - seed[i,j,c]| <= 255 * epsilon
+            |neighbour[i,j,c] - seed[i,j,c]| <= 255 * epsilon
 
     Requirements:
-        ✓ Return a list of neighbors: [neighbor1, neighbor2, ..., neighborK]
+        ✓ Return a list of neighbours: [neighbour1, neighbour2, ..., neighbourK]
         ✓ K can be ANY size ≥ 1
-        ✓ Neighbors must be deep copies of seed
+        ✓ Neighbours must be deep copies of seed
         ✓ Pixel values must remain in [0, 255]
         ✓ Must obey the L∞ bound exactly
 
@@ -142,28 +143,30 @@ def mutate_seed(
         epsilon (float): allowed perturbation budget
 
     Returns:
-        List[np.ndarray]: mutated neighbors
+        List[np.ndarray]: mutated neighbours
     """
 
-    neighbors = []
+    neighbours = []
 
     neighbour_additive_noise = generate_additive_noise_neighbour(seed, epsilon)
     if L_constraint(seed, neighbour_additive_noise, epsilon):
-        neighbors.append(neighbour_additive_noise)
+        neighbours.append(neighbour_additive_noise)
 
     neighbour_local_masking = generate_local_masking_neighbour(seed, epsilon)
     if L_constraint(seed, neighbour_local_masking, epsilon):
-        neighbors.append(neighbour_local_masking)
+        neighbours.append(neighbour_local_masking)
 
-    neighbour_channel_perturbation = channel_specific_peturbation_neighbor(seed, epsilon)
+    neighbour_channel_perturbation = channel_specific_perturbation_neighbour(seed, epsilon)
     if L_constraint(seed, neighbour_channel_perturbation, epsilon):
-        neighbors.append(neighbour_channel_perturbation)
+        neighbours.append(neighbour_channel_perturbation)
 
-    line_stripe_neighbour = generate_line_stripe_neighbour(seed, epsilon, num_lines=5, width=2)
+    stripe_width = int(len(seed[0]) * 0.05)
+    line_stripe_neighbour = generate_line_stripe_neighbour(seed, epsilon, num_lines=10, width=stripe_width)
     if L_constraint(seed, line_stripe_neighbour, epsilon):
-        neighbors.append(line_stripe_neighbour)
+        neighbours.append(line_stripe_neighbour)
 
-    return neighbors
+    return neighbours
+
 
 # ============================================================
 # 3. SELECT BEST CANDIDATE
@@ -187,12 +190,14 @@ def select_best(
         (best_image, best_fitness)
     """
     lowest_score = float('inf')
-    best_candidate = None
+    best_candidate = candidates[0] # Avoids type warning
+
     for candidate in candidates:
         fitness = compute_fitness(candidate, model, target_label)
         if fitness < lowest_score:
             lowest_score = fitness
             best_candidate = candidate
+
     return best_candidate, lowest_score
 
 
@@ -213,7 +218,7 @@ def hill_climb(
     Requirements:
         ✓ Start from initial_seed
         ✓ EACH iteration:
-              - Generate ANY number of neighbors using mutate_seed()
+              - Generate ANY number of neighbours using mutate_seed()
               - Enforce the SAME L∞ bound relative to initial_seed
               - Add current image to candidates (elitism)
               - Use select_best() to pick the winner
@@ -225,19 +230,24 @@ def hill_climb(
     Returns:
         (final_image, final_fitness)
     """
-    current_image = initial_seed.copy()
-    current_fitness = compute_fitness(current_image, model, target_label)
-    best_image = current_image.copy()
+    current_fitness = compute_fitness(initial_seed, model, target_label)
     best_fitness = current_fitness
+    
+    current_image = initial_seed.copy()
+    best_image = initial_seed.copy()
+    
     no_improvement_count = 0
 
     for iteration in range(iterations):
-        # Generate neighbors
-        neighbors = mutate_seed(current_image, epsilon)
-        neighbors.append(current_image)
+        # Generate neighbours
+        neighbours = mutate_seed(current_image, epsilon)
+        neighbours.append(current_image)
+
+        # Remove i from neighbours if it violates L constraint relative to initial_seed
+        neighbours = [n for n in neighbours if L_constraint(initial_seed, n, epsilon)]
 
         # Select the best candidate
-        candidate_image, candidate_fitness = select_best(neighbors, model, target_label)
+        candidate_image, candidate_fitness = select_best(neighbours, model, target_label)
 
         if candidate_fitness < current_fitness:
             current_image = candidate_image
@@ -251,6 +261,7 @@ def hill_climb(
         else:
             no_improvement_count += 1
         
+        # Stopping conditions
         if no_improvement_count >= 40: # can be adjusted
             break
             
@@ -262,7 +273,6 @@ def hill_climb(
             break
 
     return best_image, best_fitness
-
 
 
 # ============================================================
@@ -281,8 +291,9 @@ if __name__ == "__main__":
         os.makedirs("hc_results")
 
     EPSILON = 0.30
-    ITERATIONS = 300
+    ITERATIONS = 50
 
+    # For every image in the list
     for i, item in enumerate(image_list):
         filename = item["image"]
         image_path = "images/" + filename
@@ -295,11 +306,13 @@ if __name__ == "__main__":
         img_array = img_to_array(img)
         seed = img_array.copy()
 
+        # Get top-5 baseline predictions
         print("\nBaseline predictions (top-5):")
         preds = model.predict(np.expand_dims(seed, axis=0))
         for cl in decode_predictions(preds, top=5)[0]:
             print(f"{cl[1]:20s}  prob={cl[2]:.5f}")
 
+        # Run hill climbing algortihm and print results
         final_img, final_fitness = hill_climb(
             initial_seed=seed,
             model=model,
@@ -309,8 +322,8 @@ if __name__ == "__main__":
         )
 
         print("\nFinal fitness:", final_fitness)
-
         final_preds = model.predict(np.expand_dims(final_img, axis=0))
+
         print("\nFinal predictions:")
         for cl in decode_predictions(final_preds, top=5)[0]:
             print(cl)
@@ -322,6 +335,7 @@ if __name__ == "__main__":
         adversarial_save_path = f"hc_results/{filename}_adversarial.png"
         array_to_img(final_img).save(adversarial_save_path)
 
+        # Store results of the hill climber in JSON format
         report_details = {
             "original_image": original_save_path,
             "adversarial_image": adversarial_save_path,

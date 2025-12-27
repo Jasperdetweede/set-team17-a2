@@ -57,6 +57,37 @@ def generate_additive_noise_neighbour(seed: np.ndarray, epsilon: float) -> np.nd
     neighbour = np.clip(neighbour + noise, 0, 255)
     return neighbour
 
+def channel_specific_peturbation_neighbor(seed: np.ndarray, epsilon: float) -> np.ndarray:
+    neighbour = seed.copy()
+    h, w, c = seed.shape
+    limit = 255 * epsilon
+    for channel in range(c):
+        noise = np.random.uniform(-limit, limit, (h, w))
+        neighbour[:, :, channel] = np.clip(neighbour[:, :, channel] + noise, 0, 255)
+    return neighbour
+
+def generate_line_stripe_neighbour(seed: np.ndarray, epsilon: float, num_lines: int = 3, width: int = 3) -> np.ndarray:
+    neighbour = seed.copy()
+    h, w, c = seed.shape
+    limit = 255 * epsilon
+
+    X, Y = np.meshgrid(np.arange(w), np.arange(h))
+
+    for _ in range(num_lines):
+        slope = np.random.uniform(-5.0, 5.0)
+        intercept = np.random.uniform(0, h) - slope * (0.5 * w) 
+
+        # compute distance from line y = slope * x + intercept
+        dist = np.abs(Y - (slope * X + intercept))
+        mask = dist <= width  # boolean mask where line affects
+
+        # generate random perturbation for masked pixels
+        delta = np.random.uniform(-limit, limit, size=(h, w, c))
+        for ch in range(c):
+            neighbour[:, :, ch] = np.where(mask, np.clip(neighbour[:, :, ch] + delta[:, :, ch], 0, 255), neighbour[:, :, ch])
+
+    return neighbour
+
 def L_constraint(seed: np.ndarray, neighbor: np.ndarray, epsilon: float) -> bool:
     diff = np.abs(neighbor - seed)
     return np.all(diff <= 255 * epsilon)
@@ -102,6 +133,14 @@ def mutate_seed(
     if L_constraint(seed, neighbour_additive_noise, epsilon):
         neighbors.append(neighbour_additive_noise)
 
+    neighbour_channel_perturbation = channel_specific_peturbation_neighbor(seed, epsilon)
+    if L_constraint(seed, neighbour_channel_perturbation, epsilon):
+        neighbors.append(neighbour_channel_perturbation)
+
+    line_stripe_neighbour = generate_line_stripe_neighbour(seed, epsilon, num_lines=5, width=2)
+    if L_constraint(seed, line_stripe_neighbour, epsilon):
+        neighbors.append(line_stripe_neighbour)
+
     return neighbors
 
 # ============================================================
@@ -125,9 +164,14 @@ def select_best(
     Returns:
         (best_image, best_fitness)
     """
-    # TODO Based on the chosen neighbour, change the mutation description in the report at the end of the file.
-    # TODO (student)
-    raise NotImplementedError("select_best must be implemented by the student.")
+    lowest_score = float('inf')
+    best_candidate = None
+    for candidate in candidates:
+        fitness = compute_fitness(candidate, model, target_label)
+        if fitness < lowest_score:
+            lowest_score = fitness
+            best_candidate = candidate
+    return best_candidate, lowest_score
 
 
 # ============================================================
@@ -159,9 +203,44 @@ def hill_climb(
     Returns:
         (final_image, final_fitness)
     """
+    current_image = initial_seed.copy()
+    current_fitness = compute_fitness(current_image, model, target_label)
+    best_image = current_image.copy()
+    best_fitness = current_fitness
+    no_improvement_count = 0
 
-    # TODO (team work)
-    raise NotImplementedError("hill_climb must be implemented by the team.")
+    for iteration in range(iterations):
+        # Generate neighbors
+        neighbors = mutate_seed(current_image, epsilon)
+        neighbors.append(current_image)
+
+        # Select the best candidate
+        candidate_image, candidate_fitness = select_best(neighbors, model, target_label)
+
+        if candidate_fitness < current_fitness:
+            current_image = candidate_image
+            current_fitness = candidate_fitness
+            no_improvement_count = 0
+            
+            # Update global best
+            if current_fitness < best_fitness:
+                best_image = current_image.copy()
+                best_fitness = current_fitness
+        else:
+            no_improvement_count += 1
+        
+        if no_improvement_count >= 40: # can be adjusted
+            break
+            
+        prediction = model.predict(np.expand_dims(current_image, axis=0), verbose=0)
+        predicted_class = decode_predictions(prediction, top=1)[0][0][1]
+        predicted_confidence = np.max(prediction)
+
+        if predicted_class != target_label and predicted_confidence >= 0.9:
+            break
+
+    return best_image, best_fitness
+
 
 
 # ============================================================

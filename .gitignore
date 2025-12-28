@@ -2,3 +2,4 @@ venv/
 hc_results
 attack_results/
 *.pyc
+OLD_RESULTS/

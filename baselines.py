@@ -68,9 +68,38 @@ PGD_STEP_SIZE = 0.01
 OUTDIR = "attack_results"
 os.makedirs(OUTDIR, exist_ok=True)
 
+
+# ================================================================
+# Helper function to compute perturbation statistics for part 7
+# ================================================================
+def perturbation_stats(x_clean, x_adv):
+    diff = torch.abs(x_adv - x_clean)
+
+    # L∞ distance (already normalized)
+    linf = diff.max().item()
+
+    # Mean absolute pixel change (all pixels, all channels)
+    avg_change = diff.mean().item()
+
+    # Fraction of pixels changed (any channel differs)
+    changed_pixels = (diff.sum(dim=1) > 0).sum().item()
+    total_pixels = x_clean.shape[2] * x_clean.shape[3]
+    fraction_changed = changed_pixels / total_pixels
+
+    return linf, avg_change, fraction_changed
+
 # ================================================================
 # 7. Run attacks for every image from the JSON file
 # ================================================================
+stats = {
+    "fgm_linf": [],
+    "fgm_avg": [],
+    "fgm_frac": [],
+    "pgd_linf": [],
+    "pgd_avg": [],
+    "pgd_frac": [],
+}
+
 for entry in tqdm(items, desc="Running attacks"):
     image_file = entry["image"]
     human_label = entry["label"]  # e.g. "goldfish"
@@ -80,7 +109,7 @@ for entry in tqdm(items, desc="Running attacks"):
     # -----------------------------
     img_path = os.path.join(IMAGE_DIR, image_file)
     img_pil = Image.open(img_path).convert("RGB")
-    x = transform(img_pil).unsqueeze(0).to(device)
+    x = transform(img_pil).unsqueeze(0).to(device) # type: ignore
 
     # -----------------------------
     # Ground truth index
@@ -113,7 +142,17 @@ for entry in tqdm(items, desc="Running attacks"):
 
     save_image(x_fgm, os.path.join(OUTDIR, f"{image_file}_fgm.png"))
 
-    print(f"FGM prediction: {pred_fgm} ({prob_fgm:.3f})")
+    print(f"\nFGM prediction: {pred_fgm} ({prob_fgm:.3f})")
+
+    # Added to print perturbation stats for FGM
+    linf_fgm, avg_fgm, frac_fgm = perturbation_stats(x, x_fgm)
+    stats["fgm_linf"].append(linf_fgm)
+    stats["fgm_avg"].append(avg_fgm)
+    stats["fgm_frac"].append(frac_fgm)
+
+    print(f"FGM L∞: {linf_fgm:.4f}")
+    print(f"FGM avg pixel change: {avg_fgm:.6f}")
+    print(f"FGM fraction pixels changed: {frac_fgm:.4f}")
 
     # =====================================================
     # PGD Attack
@@ -127,7 +166,18 @@ for entry in tqdm(items, desc="Running attacks"):
 
     save_image(x_pgd, os.path.join(OUTDIR, f"{image_file}_pgd.png"))
 
-    print(f"PGD prediction: {pred_pgd} ({prob_pgd:.3f})")
+    print(f"\nPGD prediction: {pred_pgd} ({prob_pgd:.3f})")
+
+    # Added to print perturbation stats for PGD
+    linf_pgd, avg_pgd, frac_pgd = perturbation_stats(x, x_pgd)
+    stats["pgd_linf"].append(linf_pgd)
+    stats["pgd_avg"].append(avg_pgd)
+    stats["pgd_frac"].append(frac_pgd)
+
+    print(f"PGD L∞: {linf_pgd:.4f}")
+    print(f"PGD avg pixel change: {avg_pgd:.6f}")
+    print(f"PGD fraction pixels changed: {frac_pgd:.4f}")
+
 
     # =====================================================
     # Summary for this image
@@ -139,3 +189,13 @@ for entry in tqdm(items, desc="Running attacks"):
         print("PGD correct?", imagenet_labels.index(pred_pgd) == true_idx)
 
     print("------------------------------------------------------")
+
+# Final metric summary across all images
+print("\n=== Baseline summary ===")
+print(f"FGM avg L∞: {np.mean(stats['fgm_linf']):.4f}")
+print(f"FGM avg pixel change: {np.mean(stats['fgm_avg']):.6f}")
+print(f"FGM avg fraction pixels changed: {np.mean(stats['fgm_frac']):.4f}")
+
+print(f"PGD avg L∞: {np.mean(stats['pgd_linf']):.4f}")
+print(f"PGD avg pixel change: {np.mean(stats['pgd_avg']):.6f}")
+print(f"PGD avg fraction pixels changed: {np.mean(stats['pgd_frac']):.4f}")

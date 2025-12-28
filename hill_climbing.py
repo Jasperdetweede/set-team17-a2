@@ -15,14 +15,19 @@ import os.path
 
 import numpy as np
 import matplotlib.pyplot as plt
-from typing import List, Tuple
 
+from typing import List, Tuple
 from keras.applications import vgg16
 from keras.applications.imagenet_utils import decode_predictions
 from keras.utils import array_to_img, load_img, img_to_array
-from scipy.ndimage import gaussian_filter
 from collections import Counter
 
+from mutation_operators import (
+    generate_additive_noise_neighbour,
+    generate_local_masking_neighbour,
+    channel_specific_perturbation_neighbour,
+    generate_lines_neighbour
+)
 
 # ============================================================
 # 1. FITNESS FUNCTION
@@ -57,60 +62,6 @@ def compute_fitness(
 # ============================================================
 # 2. MUTATION FUNCTION
 # ============================================================
-
-def generate_additive_noise_neighbour(seed: np.ndarray, epsilon: float) -> np.ndarray:
-    neighbour = seed.copy()
-    h, w, c = seed.shape
-    limit = 255 * epsilon
-    noise = np.random.uniform(-limit, limit, (h, w, c))
-    neighbour = np.clip(neighbour + noise, 0, 255)
-    return neighbour
-
-def generate_local_masking_neighbour(seed: np.ndarray, epsilon: float) -> np.ndarray:
-    neighbour = gaussian_filter(seed, sigma=(1.0, 1.0, 0.0))
-    neighbour = neighbour.astype(np.float32)
-
-    limit = 255 * epsilon
-    mask = np.abs(neighbour - seed) < limit
-    neighbour = np.where(mask, neighbour, seed)
-    neighbour = np.clip(neighbour, 0, 255)
-    return neighbour
-
-def channel_specific_perturbation_neighbour(seed: np.ndarray, epsilon: float) -> np.ndarray:
-    neighbour = seed.copy()
-    h, w, c = seed.shape
-    limit = 255 * epsilon
-    for channel in range(c):
-        noise = np.random.uniform(-limit, limit, (h, w))
-        neighbour[:, :, channel] = np.clip(neighbour[:, :, channel] + noise, 0, 255)
-    return neighbour
-
-def generate_line_stripe_neighbour(seed: np.ndarray, epsilon: float, num_lines: int = 3, width: int = 3) -> np.ndarray:
-    neighbour = seed.copy()
-    h, w, c = seed.shape
-    limit = 255 * epsilon
-
-    X, Y = np.meshgrid(np.arange(w), np.arange(h))
-
-    for _ in range(num_lines):
-        slope = np.random.uniform(-5.0, 5.0)
-        intercept = np.random.uniform(0, h) - slope * (0.5 * w) 
-
-        # compute distance from line y = slope * x + intercept
-        dist = np.abs(Y - (slope * X + intercept))
-        mask = dist <= width  # boolean mask where line affects
-
-        # generate random perturbation for masked pixels
-        delta = np.random.uniform(-limit, limit, size=(h, w, c))
-        for ch in range(c):
-            clipped  = np.clip(neighbour[:, :, ch] + delta[:, :, ch], 0, 255)
-            neighbour[:, :, ch] = np.where(mask, clipped, neighbour[:, :, ch])
-
-    return neighbour
-
-def L_constraint(seed: np.ndarray, neighbour: np.ndarray, epsilon: float) -> bool:
-    diff = np.abs(np.subtract(neighbour, seed))
-    return bool(np.all(diff <= 255 * epsilon))
 
 def mutate_seed(
     seed: np.ndarray,
@@ -159,12 +110,11 @@ def mutate_seed(
     neighbour_channel_perturbation = channel_specific_perturbation_neighbour(seed, epsilon)
     neighbours.append(neighbour_channel_perturbation)
 
-    stripe_width = int(len(seed[0]) * 0.05)
-    line_stripe_neighbour = generate_line_stripe_neighbour(seed, epsilon, num_lines=10, width=stripe_width)
-    neighbours.append(line_stripe_neighbour)
+    LINE_WIDTH = int(len(seed[0]) * 0.05)
+    lines_neighbour = generate_lines_neighbour(seed, epsilon, num_lines=10, width=LINE_WIDTH)
+    neighbours.append(lines_neighbour)
 
     return neighbours
-
 
 
 # ============================================================
@@ -204,6 +154,10 @@ def select_best(
 # 4. HILL-CLIMBING ALGORITHM
 # ============================================================
 
+def L_constraint(seed: np.ndarray, neighbour: np.ndarray, epsilon: float) -> bool:
+    diff = np.abs(np.subtract(neighbour, seed))
+    return bool(np.all(diff <= 255 * epsilon))
+
 def hill_climb(
     initial_seed: np.ndarray,
     model,
@@ -229,35 +183,37 @@ def hill_climb(
     Returns:
         (final_image, final_fitness)
     """
+
+    # Parameters (Not allowed to change function signature, so can be changed here)
+    EPSILON_STEP_SIZE = epsilon * 0.05
+    NUM_NEIGHBOURS_PER_MUTATION_TYPE = 5
+    MAX_NO_ITER = 10
+    MUTATION_NAMES = ["Additive Noise", "Local Masking", "Channel Perturbation", "Lines Perturbation"]
+    
+    # Initialization
     current_fitness = compute_fitness(initial_seed, model, target_label)
     best_fitness = current_fitness
-    
     current_image = initial_seed.copy()
     best_image = initial_seed.copy()
-    
     no_improvement_count = 0
-
     mutation_history = []
 
     for iteration in range(iterations):
-        # Generate neighbours
-        mutation_names = ["Additive Noise", "Local Masking", "Channel Perturbation", "Line Stripe"]
-        neighbours = mutate_seed(initial_seed, epsilon)
-        assert len(neighbours) == len(mutation_names), "Mismatch between mutation names and generated neighbours"
+        # Generate neighbours, zip with mutation names
+        neighbours = [n for _ in range(NUM_NEIGHBOURS_PER_MUTATION_TYPE) for n in mutate_seed(current_image, EPSILON_STEP_SIZE)]
+        repeated_mutation_names = MUTATION_NAMES * NUM_NEIGHBOURS_PER_MUTATION_TYPE
+        
+        assert len(neighbours) == len(repeated_mutation_names), "Mismatch between mutation names and generated neighbours"
 
-        neighbours = {name: img for name, img in zip(mutation_names, neighbours)}
-        neighbours["Current Image"] = current_image
+        neighbours = [(name, img) for name, img in zip(repeated_mutation_names, neighbours)]
+        neighbours.append(("Current Image", current_image))
 
         # Remove i from neighbours if it violates L constraint relative to initial_seed
-        valid_neighbours: dict = {name: img for name, img in neighbours.items() 
-                                  if L_constraint(initial_seed, img, epsilon) 
-                                #   and L_constraint(current_image, img, epsilon)
-                                  }
-        
-        valid_neighbours_values = list(valid_neighbours.values())
+        valid_neighbours: List[Tuple[str, np.ndarray]] = [(name, img) for name, img in neighbours if L_constraint(initial_seed, img, epsilon)]
+        valid_neighbours_images: List[np.ndarray] = [img for _, img in valid_neighbours]
 
         # Select the best candidate 
-        candidate_image, candidate_fitness = select_best(valid_neighbours_values, model, target_label)        
+        candidate_image, candidate_fitness = select_best(valid_neighbours_images, model, target_label)        
 
         # Update current image if fitness improved
         if candidate_fitness < current_fitness:
@@ -271,7 +227,7 @@ def hill_climb(
                 best_fitness = current_fitness
 
             # Record mutation used
-            for i, (name, img) in enumerate(valid_neighbours.items()):  
+            for i, (name, img) in enumerate([(name, img) for name, img in valid_neighbours]):  
                 if np.array_equal(img, candidate_image):
                     mutation_history.append(name)
                     break
@@ -287,7 +243,7 @@ def hill_climb(
                 mutation_history.append("No better mutations")
         
         # Stopping conditions
-        if no_improvement_count >= 40: # can be adjusted
+        if no_improvement_count >= MAX_NO_ITER: # can be adjusted
             break
             
         prediction = model.predict(np.expand_dims(current_image, axis=0), verbose=0)
@@ -297,12 +253,11 @@ def hill_climb(
         if predicted_class != target_label and predicted_confidence >= 0.9:
             break
 
-        if iteration % 10 == 0 or iteration == iterations - 1:
-            print(f"Hill Climb Progress: iteration {iteration+1}/{iterations}", end="\r")
+        print(f"Hill Climb Progress: iteration {iteration}/{iterations} | Chosen step: {mutation_history[-1]:>25} | Current Fitness: {current_fitness:.6f} | Best Fitness: {best_fitness:.6f} | No Improvement Count: {no_improvement_count}")
 
     # Print mutation history in JSON format
     # This was done here because we are not allowed to change function signature
-    print("Mutation counts: \n", Counter(mutation_history), "\n")
+    print("\nMutation counts: \n", Counter(mutation_history))
 
     # Return best found image and its fitness
     return best_image, best_fitness
@@ -323,11 +278,12 @@ if __name__ == "__main__":
     if not os.path.exists("hc_results"):
         os.makedirs("hc_results")
 
-    EPSILON = 0.30
-    ITERATIONS = 50
+    EPSILON = 0.2
+    ITERATIONS = 100
 
     # For every image in the list
     for i, item in enumerate(image_list):
+        print(f"\n\n\n====== Processing image {i+1}/{len(image_list)} ======")
         filename = item["image"]
         image_path = "images/" + filename
         target_label = item["label"]
@@ -341,9 +297,11 @@ if __name__ == "__main__":
 
         # Get top-5 baseline predictions
         print("\nBaseline predictions (top-5):")
-        preds = model.predict(np.expand_dims(seed, axis=0))
+        preds = model.predict(np.expand_dims(seed, axis=0), verbose="0")
         for cl in decode_predictions(preds, top=5)[0]:
             print(f"{cl[1]:20s}  prob={cl[2]:.5f}")
+
+        print("\n")
 
         # Run hill climbing algortihm and print results
         final_img, final_fitness = hill_climb(
@@ -355,7 +313,7 @@ if __name__ == "__main__":
         )
 
         print("\nFinal fitness:", final_fitness)
-        final_preds = model.predict(np.expand_dims(final_img, axis=0))
+        final_preds = model.predict(np.expand_dims(final_img, axis=0), verbose="0")
 
         print("\nFinal predictions:")
         for cl in decode_predictions(final_preds, top=5)[0]:
@@ -370,7 +328,8 @@ if __name__ == "__main__":
 
         # Calculate metrics 
         avg_of_changed_pixels = np.mean(np.abs(final_img - seed)) / 255
-        num_changed_pixels = np.count_nonzero(np.subtract(final_img, seed)) / np.size(seed) 
+        max_pixel_change = np.max(np.abs(final_img - seed)) / 255
+        num_changed_pixels = np.count_nonzero(np.any(final_img != seed, axis=-1)) / final_img.shape[0] / final_img.shape[1]
 
         # Store results of the hill climber in JSON format
         report_details = {
@@ -387,6 +346,7 @@ if __name__ == "__main__":
                 "label": str(decode_predictions(final_preds, top=1)[0][0][1]),
                 "score": float(decode_predictions(final_preds, top=1)[0][0][2]),
                 "average_of_pixel_changes": float(avg_of_changed_pixels),
+                "maximum_of_pixel_changes": float(max_pixel_change),
                 "number_of_changed_pixels": float(num_changed_pixels)
             },
             "final_fitness": float(final_fitness),

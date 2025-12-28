@@ -187,7 +187,7 @@ def hill_climb(
     # Parameters (Not allowed to change function signature, so can be changed here)
     EPSILON_STEP_SIZE = epsilon * 0.05
     NUM_NEIGHBOURS_PER_MUTATION_TYPE = 5
-    MAX_NO_ITER = 10
+    MAX_ITER_NO_CHANGE = 10
     MUTATION_NAMES = ["Additive Noise", "Local Masking", "Channel Perturbation", "Lines Perturbation"]
     
     # Initialization
@@ -243,7 +243,7 @@ def hill_climb(
                 mutation_history.append("No better mutations")
         
         # Stopping conditions
-        if no_improvement_count >= MAX_NO_ITER: # can be adjusted
+        if no_improvement_count >= MAX_ITER_NO_CHANGE: # can be adjusted
             break
             
         prediction = model.predict(np.expand_dims(current_image, axis=0), verbose=0)
@@ -279,7 +279,7 @@ if __name__ == "__main__":
         os.makedirs("hc_results")
 
     EPSILON = 0.2
-    ITERATIONS = 100
+    ITERATIONS = 200
 
     # For every image in the list
     for i, item in enumerate(image_list):

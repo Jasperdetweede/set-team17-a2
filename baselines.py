@@ -58,7 +58,7 @@ transform = transforms.Compose([
 # ================================================================
 # 5. Attack hyperparameters
 # ================================================================
-EPS = 0.30          # This can be tuned
+EPS = 0.20          # This can be tuned
 PGD_STEPS = 40
 PGD_STEP_SIZE = 0.01
 

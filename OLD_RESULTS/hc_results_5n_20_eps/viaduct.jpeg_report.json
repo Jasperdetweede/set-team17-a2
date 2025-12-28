@@ -1,0 +1,20 @@
+{
+    "original_image": "hc_results/viaduct.jpeg_original.png",
+    "adversarial_image": "hc_results/viaduct.jpeg_adversarial.png",
+    "target_label": "viaduct",
+    "epsilon": 0.2,
+    "iterations": 100,
+    "original_prediction": {
+        "label": "viaduct",
+        "score": 0.9991100430488586
+    },
+    "final_prediction": {
+        "label": "viaduct",
+        "score": 0.7521045804023743,
+        "average_of_pixel_changes": 0.03395453257244243,
+        "number_of_changed_pixels": 1.0
+    },
+    "final_fitness": 0.7521045804023743,
+    "success": false,
+    "mutation history": "See terminal output; cannot change function signature"
+}

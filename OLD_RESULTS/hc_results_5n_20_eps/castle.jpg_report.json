@@ -1,0 +1,20 @@
+{
+    "original_image": "hc_results/castle.jpg_original.png",
+    "adversarial_image": "hc_results/castle.jpg_adversarial.png",
+    "target_label": "castle",
+    "epsilon": 0.2,
+    "iterations": 100,
+    "original_prediction": {
+        "label": "castle",
+        "score": 0.864530622959137
+    },
+    "final_prediction": {
+        "label": "palace",
+        "score": 0.7614047527313232,
+        "average_of_pixel_changes": 0.038599636504203075,
+        "number_of_changed_pixels": 1.0
+    },
+    "final_fitness": -0.7614047527313232,
+    "success": true,
+    "mutation history": "See terminal output; cannot change function signature"
+}

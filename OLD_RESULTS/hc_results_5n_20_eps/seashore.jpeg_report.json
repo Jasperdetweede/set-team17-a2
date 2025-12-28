@@ -1,0 +1,20 @@
+{
+    "original_image": "hc_results/seashore.jpeg_original.png",
+    "adversarial_image": "hc_results/seashore.jpeg_adversarial.png",
+    "target_label": "seashore",
+    "epsilon": 0.2,
+    "iterations": 100,
+    "original_prediction": {
+        "label": "seashore",
+        "score": 0.4470939338207245
+    },
+    "final_prediction": {
+        "label": "lakeside",
+        "score": 0.6677574515342712,
+        "average_of_pixel_changes": 0.030656041100177726,
+        "number_of_changed_pixels": 1.0
+    },
+    "final_fitness": -0.6677574515342712,
+    "success": true,
+    "mutation history": "See terminal output; cannot change function signature"
+}

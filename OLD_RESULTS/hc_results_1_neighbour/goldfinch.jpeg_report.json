@@ -1,0 +1,20 @@
+{
+    "original_image": "hc_results/goldfinch.jpeg_original.png",
+    "adversarial_image": "hc_results/goldfinch.jpeg_adversarial.png",
+    "target_label": "hummingbird",
+    "epsilon": 0.3,
+    "iterations": 100,
+    "original_prediction": {
+        "label": "jay",
+        "score": 0.2624797821044922
+    },
+    "final_prediction": {
+        "label": "jay",
+        "score": 0.7274056077003479,
+        "average_of_pixel_changes": 0.03003501155850973,
+        "number_of_changed_pixels": 0.9970038796768708
+    },
+    "final_fitness": -0.7274056077003479,
+    "success": true,
+    "mutation history": "See terminal output; cannot change function signature"
+}

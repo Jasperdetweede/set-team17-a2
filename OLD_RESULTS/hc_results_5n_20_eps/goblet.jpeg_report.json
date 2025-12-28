@@ -1,0 +1,20 @@
+{
+    "original_image": "hc_results/goblet.jpeg_original.png",
+    "adversarial_image": "hc_results/goblet.jpeg_adversarial.png",
+    "target_label": "goblet",
+    "epsilon": 0.2,
+    "iterations": 100,
+    "original_prediction": {
+        "label": "cocktail_shaker",
+        "score": 0.7821556329727173
+    },
+    "final_prediction": {
+        "label": "cocktail_shaker",
+        "score": 0.9034086465835571,
+        "average_of_pixel_changes": 0.016054140960679728,
+        "number_of_changed_pixels": 1.0
+    },
+    "final_fitness": -0.9034086465835571,
+    "success": true,
+    "mutation history": "See terminal output; cannot change function signature"
+}

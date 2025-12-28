@@ -1,0 +1,20 @@
+{
+    "original_image": "hc_results/bubble.jpeg_original.png",
+    "adversarial_image": "hc_results/bubble.jpeg_adversarial.png",
+    "target_label": "bubble",
+    "epsilon": 0.3,
+    "iterations": 100,
+    "original_prediction": {
+        "label": "bubble",
+        "score": 0.9997244477272034
+    },
+    "final_prediction": {
+        "label": "chest",
+        "score": 0.7944214940071106,
+        "average_of_pixel_changes": 0.04993552788560403,
+        "number_of_changed_pixels": 0.9968843005952381
+    },
+    "final_fitness": -0.7944214940071106,
+    "success": true,
+    "mutation history": "See terminal output; cannot change function signature"
+}

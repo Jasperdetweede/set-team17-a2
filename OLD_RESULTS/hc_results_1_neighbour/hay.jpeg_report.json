@@ -1,0 +1,20 @@
+{
+    "original_image": "hc_results/hay.jpeg_original.png",
+    "adversarial_image": "hc_results/hay.jpeg_adversarial.png",
+    "target_label": "hay",
+    "epsilon": 0.3,
+    "iterations": 100,
+    "original_prediction": {
+        "label": "hay",
+        "score": 0.9700145125389099
+    },
+    "final_prediction": {
+        "label": "dam",
+        "score": 0.9017879366874695,
+        "average_of_pixel_changes": 0.05170055894699339,
+        "number_of_changed_pixels": 0.9999534970238095
+    },
+    "final_fitness": -0.9017879366874695,
+    "success": true,
+    "mutation history": "See terminal output; cannot change function signature"
+}

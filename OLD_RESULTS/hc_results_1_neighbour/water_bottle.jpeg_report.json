@@ -1,0 +1,20 @@
+{
+    "original_image": "hc_results/water_bottle.jpeg_original.png",
+    "adversarial_image": "hc_results/water_bottle.jpeg_adversarial.png",
+    "target_label": "water jug",
+    "epsilon": 0.3,
+    "iterations": 100,
+    "original_prediction": {
+        "label": "water_bottle",
+        "score": 0.28373751044273376
+    },
+    "final_prediction": {
+        "label": "water_bottle",
+        "score": 0.4870494306087494,
+        "average_of_pixel_changes": 0.018528453372037422,
+        "number_of_changed_pixels": 0.9998538477891157
+    },
+    "final_fitness": -0.4870494306087494,
+    "success": true,
+    "mutation history": "See terminal output; cannot change function signature"
+}

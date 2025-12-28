@@ -1,0 +1,20 @@
+{
+    "original_image": "hc_results/fish.jpg_original.png",
+    "adversarial_image": "hc_results/fish.jpg_adversarial.png",
+    "target_label": "goldfish",
+    "epsilon": 0.3,
+    "iterations": 100,
+    "original_prediction": {
+        "label": "goldfish",
+        "score": 0.9828678369522095
+    },
+    "final_prediction": {
+        "label": "puffer",
+        "score": 0.9076043963432312,
+        "average_of_pixel_changes": 0.03156714822497145,
+        "number_of_changed_pixels": 0.9956420068027211
+    },
+    "final_fitness": -0.9076043963432312,
+    "success": true,
+    "mutation history": "See terminal output; cannot change function signature"
+}

@@ -1,0 +1,20 @@
+{
+    "original_image": "hc_results/cup.jpeg_original.png",
+    "adversarial_image": "hc_results/cup.jpeg_adversarial.png",
+    "target_label": "cup",
+    "epsilon": 0.3,
+    "iterations": 100,
+    "original_prediction": {
+        "label": "cup",
+        "score": 0.911670446395874
+    },
+    "final_prediction": {
+        "label": "cup",
+        "score": 0.9074655771255493,
+        "average_of_pixel_changes": 0.004475647795434092,
+        "number_of_changed_pixels": 0.8084542410714286
+    },
+    "final_fitness": 0.9074655771255493,
+    "success": false,
+    "mutation history": "See terminal output; cannot change function signature"
+}

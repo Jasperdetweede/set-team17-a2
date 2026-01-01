@@ -1,0 +1,1001 @@
+(venv) PS C:\Users\jaspe\Documents\Github_projects\set-team17-a2> python hill_climbing.py
+
+
+
+====== Processing image 1/10 ======
+Loaded image: images/fish.jpg
+Target label: goldfish
+
+Baseline predictions (top-5):
+goldfish              prob=0.98287
+puffer                prob=0.01099
+rock_beauty           prob=0.00340
+tench                 prob=0.00173
+anemone_fish          prob=0.00079
+
+
+Hill Climb Progress: iteration 0/200 | Chosen step:            Additive Noise | Current Fitness: 0.980356 | Best Fitness: 0.980356 | No Improvement Count: 0
+Hill Climb Progress: iteration 1/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.976567 | Best Fitness: 0.976567 | No Improvement Count: 0
+Hill Climb Progress: iteration 2/200 | Chosen step:            Additive Noise | Current Fitness: 0.970974 | Best Fitness: 0.970974 | No Improvement Count: 0
+Hill Climb Progress: iteration 3/200 | Chosen step:            Additive Noise | Current Fitness: 0.963432 | Best Fitness: 0.963432 | No Improvement Count: 0
+Hill Climb Progress: iteration 4/200 | Chosen step:            Additive Noise | Current Fitness: 0.957055 | Best Fitness: 0.957055 | No Improvement Count: 0
+Hill Climb Progress: iteration 5/200 | Chosen step:            Additive Noise | Current Fitness: 0.943201 | Best Fitness: 0.943201 | No Improvement Count: 0
+Hill Climb Progress: iteration 6/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.932260 | Best Fitness: 0.932260 | No Improvement Count: 0
+Hill Climb Progress: iteration 7/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.916803 | Best Fitness: 0.916803 | No Improvement Count: 0
+Hill Climb Progress: iteration 8/200 | Chosen step:            Additive Noise | Current Fitness: 0.905690 | Best Fitness: 0.905690 | No Improvement Count: 0
+Hill Climb Progress: iteration 9/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.895145 | Best Fitness: 0.895145 | No Improvement Count: 0
+Hill Climb Progress: iteration 10/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.876347 | Best Fitness: 0.876347 | No Improvement Count: 0
+Hill Climb Progress: iteration 11/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.858847 | Best Fitness: 0.858847 | No Improvement Count: 0
+Hill Climb Progress: iteration 12/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.832533 | Best Fitness: 0.832533 | No Improvement Count: 0
+Hill Climb Progress: iteration 13/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.801233 | Best Fitness: 0.801233 | No Improvement Count: 0
+Hill Climb Progress: iteration 14/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.779962 | Best Fitness: 0.779962 | No Improvement Count: 0
+Hill Climb Progress: iteration 15/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.759357 | Best Fitness: 0.759357 | No Improvement Count: 0
+Hill Climb Progress: iteration 16/200 | Chosen step:            Additive Noise | Current Fitness: 0.725446 | Best Fitness: 0.725446 | No Improvement Count: 0
+Hill Climb Progress: iteration 17/200 | Chosen step:            Additive Noise | Current Fitness: 0.684762 | Best Fitness: 0.684762 | No Improvement Count: 0
+Hill Climb Progress: iteration 18/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.649000 | Best Fitness: 0.649000 | No Improvement Count: 0
+Hill Climb Progress: iteration 19/200 | Chosen step:            Additive Noise | Current Fitness: 0.625207 | Best Fitness: 0.625207 | No Improvement Count: 0
+Hill Climb Progress: iteration 20/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.578358 | Best Fitness: 0.578358 | No Improvement Count: 0
+Hill Climb Progress: iteration 21/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.543326 | Best Fitness: 0.543326 | No Improvement Count: 0
+Hill Climb Progress: iteration 22/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.526314 | Best Fitness: 0.526314 | No Improvement Count: 0
+Hill Climb Progress: iteration 23/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.496650 | Best Fitness: 0.496650 | No Improvement Count: 0
+Hill Climb Progress: iteration 24/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.451712 | Best Fitness: 0.451712 | No Improvement Count: 0
+Hill Climb Progress: iteration 25/200 | Chosen step:            Additive Noise | Current Fitness: -0.460964 | Best Fitness: -0.460964 | No Improvement Count: 0
+Hill Climb Progress: iteration 26/200 | Chosen step:            Additive Noise | Current Fitness: -0.499439 | Best Fitness: -0.499439 | No Improvement Count: 0
+Hill Climb Progress: iteration 27/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.530185 | Best Fitness: -0.530185 | No Improvement Count: 0
+Hill Climb Progress: iteration 28/200 | Chosen step:            Additive Noise | Current Fitness: -0.555848 | Best Fitness: -0.555848 | No Improvement Count: 0
+Hill Climb Progress: iteration 29/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.598397 | Best Fitness: -0.598397 | No Improvement Count: 0
+Hill Climb Progress: iteration 30/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.629395 | Best Fitness: -0.629395 | No Improvement Count: 0
+Hill Climb Progress: iteration 31/200 | Chosen step:            Additive Noise | Current Fitness: -0.672887 | Best Fitness: -0.672887 | No Improvement Count: 0
+Hill Climb Progress: iteration 32/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.748684 | Best Fitness: -0.748684 | No Improvement Count: 0
+Hill Climb Progress: iteration 33/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.765097 | Best Fitness: -0.765097 | No Improvement Count: 0
+Hill Climb Progress: iteration 34/200 | Chosen step:            Additive Noise | Current Fitness: -0.797914 | Best Fitness: -0.797914 | No Improvement Count: 0
+Hill Climb Progress: iteration 35/200 | Chosen step:            Additive Noise | Current Fitness: -0.816786 | Best Fitness: -0.816786 | No Improvement Count: 0
+Hill Climb Progress: iteration 36/200 | Chosen step:             Local Masking | Current Fitness: -0.826325 | Best Fitness: -0.826325 | No Improvement Count: 0
+Hill Climb Progress: iteration 37/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.835639 | Best Fitness: -0.835639 | No Improvement Count: 0
+Hill Climb Progress: iteration 38/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.845599 | Best Fitness: -0.845599 | No Improvement Count: 0
+Hill Climb Progress: iteration 39/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.866011 | Best Fitness: -0.866011 | No Improvement Count: 0
+Hill Climb Progress: iteration 40/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.885979 | Best Fitness: -0.885979 | No Improvement Count: 0
+
+Mutation counts:
+ Counter({'Channel Perturbation': 19, 'Additive Noise': 16, 'Lines Perturbation': 6, 'Local Masking': 1})
+
+Final fitness: -0.9038664
+
+Final predictions:
+('n02655020', 'puffer', 0.9038664)
+('n01443537', 'goldfish', 0.052670673)
+('n02606052', 'rock_beauty', 0.038435154)
+('n01440764', 'tench', 0.0031076188)
+('n09256479', 'coral_reef', 0.000892364)
+
+
+
+====== Processing image 2/10 ======
+Loaded image: images/castle.jpg
+Target label: castle
+
+Baseline predictions (top-5):
+castle                prob=0.86453
+palace                prob=0.10882
+monastery             prob=0.00926
+stupa                 prob=0.00639
+church                prob=0.00462
+
+
+Hill Climb Progress: iteration 0/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.861222 | Best Fitness: 0.861222 | No Improvement Count: 0
+Hill Climb Progress: iteration 1/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.851407 | Best Fitness: 0.851407 | No Improvement Count: 0
+Hill Climb Progress: iteration 2/200 | Chosen step:            Additive Noise | Current Fitness: 0.839950 | Best Fitness: 0.839950 | No Improvement Count: 0
+Hill Climb Progress: iteration 3/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.832499 | Best Fitness: 0.832499 | No Improvement Count: 0
+Hill Climb Progress: iteration 4/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.824619 | Best Fitness: 0.824619 | No Improvement Count: 0
+Hill Climb Progress: iteration 5/200 | Chosen step:            Additive Noise | Current Fitness: 0.810813 | Best Fitness: 0.810813 | No Improvement Count: 0
+Hill Climb Progress: iteration 6/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.797599 | Best Fitness: 0.797599 | No Improvement Count: 0
+Hill Climb Progress: iteration 7/200 | Chosen step:            Additive Noise | Current Fitness: 0.785267 | Best Fitness: 0.785267 | No Improvement Count: 0
+Hill Climb Progress: iteration 8/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.775509 | Best Fitness: 0.775509 | No Improvement Count: 0
+Hill Climb Progress: iteration 9/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.762277 | Best Fitness: 0.762277 | No Improvement Count: 0
+Hill Climb Progress: iteration 10/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.747286 | Best Fitness: 0.747286 | No Improvement Count: 0
+Hill Climb Progress: iteration 11/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.739440 | Best Fitness: 0.739440 | No Improvement Count: 0
+Hill Climb Progress: iteration 12/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.719445 | Best Fitness: 0.719445 | No Improvement Count: 0
+Hill Climb Progress: iteration 13/200 | Chosen step:            Additive Noise | Current Fitness: 0.708999 | Best Fitness: 0.708999 | No Improvement Count: 0
+Hill Climb Progress: iteration 14/200 | Chosen step:            Additive Noise | Current Fitness: 0.687914 | Best Fitness: 0.687914 | No Improvement Count: 0
+Hill Climb Progress: iteration 15/200 | Chosen step:            Additive Noise | Current Fitness: 0.668522 | Best Fitness: 0.668522 | No Improvement Count: 0
+Hill Climb Progress: iteration 16/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.651291 | Best Fitness: 0.651291 | No Improvement Count: 0
+Hill Climb Progress: iteration 17/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.641846 | Best Fitness: 0.641846 | No Improvement Count: 0
+Hill Climb Progress: iteration 18/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.628379 | Best Fitness: 0.628379 | No Improvement Count: 0
+Hill Climb Progress: iteration 19/200 | Chosen step:            Additive Noise | Current Fitness: 0.605003 | Best Fitness: 0.605003 | No Improvement Count: 0
+Hill Climb Progress: iteration 20/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.586058 | Best Fitness: 0.586058 | No Improvement Count: 0
+Hill Climb Progress: iteration 21/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.577247 | Best Fitness: 0.577247 | No Improvement Count: 0
+Hill Climb Progress: iteration 22/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.563408 | Best Fitness: 0.563408 | No Improvement Count: 0
+Hill Climb Progress: iteration 23/200 | Chosen step:            Additive Noise | Current Fitness: 0.548646 | Best Fitness: 0.548646 | No Improvement Count: 0
+Hill Climb Progress: iteration 24/200 | Chosen step:            Additive Noise | Current Fitness: 0.526272 | Best Fitness: 0.526272 | No Improvement Count: 0
+Hill Climb Progress: iteration 25/200 | Chosen step:            Additive Noise | Current Fitness: 0.511161 | Best Fitness: 0.511161 | No Improvement Count: 0
+Hill Climb Progress: iteration 26/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.498824 | Best Fitness: 0.498824 | No Improvement Count: 0
+Hill Climb Progress: iteration 27/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.484323 | Best Fitness: 0.484323 | No Improvement Count: 0
+Hill Climb Progress: iteration 28/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.469872 | Best Fitness: 0.469872 | No Improvement Count: 0
+Hill Climb Progress: iteration 29/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.454271 | Best Fitness: 0.454271 | No Improvement Count: 0
+Hill Climb Progress: iteration 30/200 | Chosen step:            Additive Noise | Current Fitness: 0.437994 | Best Fitness: 0.437994 | No Improvement Count: 0
+Hill Climb Progress: iteration 31/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.440727 | Best Fitness: -0.440727 | No Improvement Count: 0
+Hill Climb Progress: iteration 32/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.448281 | Best Fitness: -0.448281 | No Improvement Count: 0
+Hill Climb Progress: iteration 33/200 | Chosen step:             Local Masking | Current Fitness: -0.454199 | Best Fitness: -0.454199 | No Improvement Count: 0
+Hill Climb Progress: iteration 34/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.464937 | Best Fitness: -0.464937 | No Improvement Count: 0
+Hill Climb Progress: iteration 35/200 | Chosen step:            Additive Noise | Current Fitness: -0.473218 | Best Fitness: -0.473218 | No Improvement Count: 0
+Hill Climb Progress: iteration 36/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.482821 | Best Fitness: -0.482821 | No Improvement Count: 0
+Hill Climb Progress: iteration 37/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.492645 | Best Fitness: -0.492645 | No Improvement Count: 0
+Hill Climb Progress: iteration 38/200 | Chosen step:            Additive Noise | Current Fitness: -0.503686 | Best Fitness: -0.503686 | No Improvement Count: 0
+Hill Climb Progress: iteration 39/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.509931 | Best Fitness: -0.509931 | No Improvement Count: 0
+Hill Climb Progress: iteration 40/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.512372 | Best Fitness: -0.512372 | No Improvement Count: 0
+Hill Climb Progress: iteration 41/200 | Chosen step:            Additive Noise | Current Fitness: -0.524121 | Best Fitness: -0.524121 | No Improvement Count: 0
+Hill Climb Progress: iteration 42/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.531987 | Best Fitness: -0.531987 | No Improvement Count: 0
+Hill Climb Progress: iteration 43/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.541047 | Best Fitness: -0.541047 | No Improvement Count: 0
+Hill Climb Progress: iteration 44/200 | Chosen step:            Additive Noise | Current Fitness: -0.548040 | Best Fitness: -0.548040 | No Improvement Count: 0
+Hill Climb Progress: iteration 45/200 | Chosen step:            Additive Noise | Current Fitness: -0.557681 | Best Fitness: -0.557681 | No Improvement Count: 0
+Hill Climb Progress: iteration 46/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.562385 | Best Fitness: -0.562385 | No Improvement Count: 0
+Hill Climb Progress: iteration 47/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.566947 | Best Fitness: -0.566947 | No Improvement Count: 0
+Hill Climb Progress: iteration 48/200 | Chosen step:            Additive Noise | Current Fitness: -0.579065 | Best Fitness: -0.579065 | No Improvement Count: 0
+Hill Climb Progress: iteration 49/200 | Chosen step:            Additive Noise | Current Fitness: -0.587478 | Best Fitness: -0.587478 | No Improvement Count: 0
+Hill Climb Progress: iteration 50/200 | Chosen step:            Additive Noise | Current Fitness: -0.591996 | Best Fitness: -0.591996 | No Improvement Count: 0
+Hill Climb Progress: iteration 51/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.604099 | Best Fitness: -0.604099 | No Improvement Count: 0
+Hill Climb Progress: iteration 52/200 | Chosen step:            Additive Noise | Current Fitness: -0.615461 | Best Fitness: -0.615461 | No Improvement Count: 0
+Hill Climb Progress: iteration 53/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.622390 | Best Fitness: -0.622390 | No Improvement Count: 0
+Hill Climb Progress: iteration 54/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.632199 | Best Fitness: -0.632199 | No Improvement Count: 0
+Hill Climb Progress: iteration 55/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.638323 | Best Fitness: -0.638323 | No Improvement Count: 0
+Hill Climb Progress: iteration 56/200 | Chosen step:            Additive Noise | Current Fitness: -0.645169 | Best Fitness: -0.645169 | No Improvement Count: 0
+Hill Climb Progress: iteration 57/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.652067 | Best Fitness: -0.652067 | No Improvement Count: 0
+Hill Climb Progress: iteration 58/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.657552 | Best Fitness: -0.657552 | No Improvement Count: 0
+Hill Climb Progress: iteration 59/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.662676 | Best Fitness: -0.662676 | No Improvement Count: 0
+Hill Climb Progress: iteration 60/200 | Chosen step:            Additive Noise | Current Fitness: -0.668235 | Best Fitness: -0.668235 | No Improvement Count: 0
+Hill Climb Progress: iteration 61/200 | Chosen step:            Additive Noise | Current Fitness: -0.678289 | Best Fitness: -0.678289 | No Improvement Count: 0
+Hill Climb Progress: iteration 62/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.684416 | Best Fitness: -0.684416 | No Improvement Count: 0
+Hill Climb Progress: iteration 63/200 | Chosen step:            Additive Noise | Current Fitness: -0.699245 | Best Fitness: -0.699245 | No Improvement Count: 0
+Hill Climb Progress: iteration 64/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.701821 | Best Fitness: -0.701821 | No Improvement Count: 0
+Hill Climb Progress: iteration 65/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.706455 | Best Fitness: -0.706455 | No Improvement Count: 0
+Hill Climb Progress: iteration 66/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.711671 | Best Fitness: -0.711671 | No Improvement Count: 0
+Hill Climb Progress: iteration 67/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.716241 | Best Fitness: -0.716241 | No Improvement Count: 0
+Hill Climb Progress: iteration 68/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.720556 | Best Fitness: -0.720556 | No Improvement Count: 0
+Hill Climb Progress: iteration 69/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.735690 | Best Fitness: -0.735690 | No Improvement Count: 0
+Hill Climb Progress: iteration 70/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.741416 | Best Fitness: -0.741416 | No Improvement Count: 0
+Hill Climb Progress: iteration 71/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.743497 | Best Fitness: -0.743497 | No Improvement Count: 0
+Hill Climb Progress: iteration 72/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.751193 | Best Fitness: -0.751193 | No Improvement Count: 0
+Hill Climb Progress: iteration 73/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.752244 | Best Fitness: -0.752244 | No Improvement Count: 0
+Hill Climb Progress: iteration 74/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.757970 | Best Fitness: -0.757970 | No Improvement Count: 0
+Hill Climb Progress: iteration 75/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.757980 | Best Fitness: -0.757980 | No Improvement Count: 0
+Hill Climb Progress: iteration 76/200 | Chosen step:            Additive Noise | Current Fitness: -0.763498 | Best Fitness: -0.763498 | No Improvement Count: 0
+Hill Climb Progress: iteration 77/200 | Chosen step:            Additive Noise | Current Fitness: -0.768096 | Best Fitness: -0.768096 | No Improvement Count: 0
+Hill Climb Progress: iteration 78/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.776956 | Best Fitness: -0.776956 | No Improvement Count: 0
+Hill Climb Progress: iteration 79/200 | Chosen step:             Local Masking | Current Fitness: -0.778229 | Best Fitness: -0.778229 | No Improvement Count: 0
+Hill Climb Progress: iteration 80/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.779598 | Best Fitness: -0.779598 | No Improvement Count: 0
+Hill Climb Progress: iteration 81/200 | Chosen step:             Local Masking | Current Fitness: -0.779609 | Best Fitness: -0.779609 | No Improvement Count: 0
+Hill Climb Progress: iteration 82/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.783197 | Best Fitness: -0.783197 | No Improvement Count: 0
+Hill Climb Progress: iteration 83/200 | Chosen step:       No better mutations | Current Fitness: -0.783197 | Best Fitness: -0.783197 | No Improvement Count: 1
+Hill Climb Progress: iteration 84/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.794563 | Best Fitness: -0.794563 | No Improvement Count: 0
+Hill Climb Progress: iteration 85/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.798989 | Best Fitness: -0.798989 | No Improvement Count: 0
+Hill Climb Progress: iteration 86/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.801174 | Best Fitness: -0.801174 | No Improvement Count: 0
+Hill Climb Progress: iteration 87/200 | Chosen step:       No better mutations | Current Fitness: -0.801174 | Best Fitness: -0.801174 | No Improvement Count: 1
+Hill Climb Progress: iteration 88/200 | Chosen step:       No better mutations | Current Fitness: -0.801174 | Best Fitness: -0.801174 | No Improvement Count: 2
+Hill Climb Progress: iteration 89/200 | Chosen step:       No better mutations | Current Fitness: -0.801174 | Best Fitness: -0.801174 | No Improvement Count: 3
+Hill Climb Progress: iteration 90/200 | Chosen step:       No better mutations | Current Fitness: -0.801174 | Best Fitness: -0.801174 | No Improvement Count: 4
+Hill Climb Progress: iteration 91/200 | Chosen step:       No better mutations | Current Fitness: -0.801174 | Best Fitness: -0.801174 | No Improvement Count: 5
+Hill Climb Progress: iteration 92/200 | Chosen step:       No better mutations | Current Fitness: -0.801174 | Best Fitness: -0.801174 | No Improvement Count: 6
+Hill Climb Progress: iteration 93/200 | Chosen step:       No better mutations | Current Fitness: -0.801174 | Best Fitness: -0.801174 | No Improvement Count: 7
+Hill Climb Progress: iteration 94/200 | Chosen step:       No better mutations | Current Fitness: -0.801174 | Best Fitness: -0.801174 | No Improvement Count: 8
+Hill Climb Progress: iteration 95/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.802597 | Best Fitness: -0.802597 | No Improvement Count: 0
+Hill Climb Progress: iteration 96/200 | Chosen step:       No better mutations | Current Fitness: -0.802597 | Best Fitness: -0.802597 | No Improvement Count: 1
+Hill Climb Progress: iteration 97/200 | Chosen step:       No better mutations | Current Fitness: -0.802597 | Best Fitness: -0.802597 | No Improvement Count: 2
+Hill Climb Progress: iteration 98/200 | Chosen step:       No better mutations | Current Fitness: -0.802597 | Best Fitness: -0.802597 | No Improvement Count: 3
+Hill Climb Progress: iteration 99/200 | Chosen step:       No better mutations | Current Fitness: -0.802597 | Best Fitness: -0.802597 | No Improvement Count: 4
+Hill Climb Progress: iteration 100/200 | Chosen step:       No better mutations | Current Fitness: -0.802597 | Best Fitness: -0.802597 | No Improvement Count: 5
+Hill Climb Progress: iteration 101/200 | Chosen step:       No better mutations | Current Fitness: -0.802597 | Best Fitness: -0.802597 | No Improvement Count: 6
+Hill Climb Progress: iteration 102/200 | Chosen step:       No better mutations | Current Fitness: -0.802597 | Best Fitness: -0.802597 | No Improvement Count: 7
+Hill Climb Progress: iteration 103/200 | Chosen step:       No better mutations | Current Fitness: -0.802597 | Best Fitness: -0.802597 | No Improvement Count: 8
+Hill Climb Progress: iteration 104/200 | Chosen step:       No better mutations | Current Fitness: -0.802597 | Best Fitness: -0.802597 | No Improvement Count: 9
+
+Mutation counts:
+ Counter({'Lines Perturbation': 29, 'Channel Perturbation': 29, 'Additive Noise': 26, 'No better mutations': 19, 'Local Masking': 3})
+
+Final fitness: -0.8025965
+
+Final predictions:
+('n03877845', 'palace', 0.8025965)
+('n02980441', 'castle', 0.12390232)
+('n03781244', 'monastery', 0.022122601)
+('n04346328', 'stupa', 0.021843316)
+('n02825657', 'bell_cote', 0.011224647)
+
+
+
+====== Processing image 3/10 ======
+Loaded image: images/cup.jpeg
+Target label: cup
+
+Baseline predictions (top-5):
+cup                   prob=0.91167
+coffee_mug            prob=0.08455
+teapot                prob=0.00120
+pitcher               prob=0.00105
+coffeepot             prob=0.00077
+
+
+Hill Climb Progress: iteration 0/200 | Chosen step:             Local Masking | Current Fitness: 0.904431 | Best Fitness: 0.904431 | No Improvement Count: 0
+Hill Climb Progress: iteration 1/200 | Chosen step:             Local Masking | Current Fitness: 0.904085 | Best Fitness: 0.904085 | No Improvement Count: 0
+Hill Climb Progress: iteration 2/200 | Chosen step:       No better mutations | Current Fitness: 0.904085 | Best Fitness: 0.904085 | No Improvement Count: 1
+Hill Climb Progress: iteration 3/200 | Chosen step:       No better mutations | Current Fitness: 0.904085 | Best Fitness: 0.904085 | No Improvement Count: 2
+Hill Climb Progress: iteration 4/200 | Chosen step:       No better mutations | Current Fitness: 0.904085 | Best Fitness: 0.904085 | No Improvement Count: 3
+Hill Climb Progress: iteration 5/200 | Chosen step:       No better mutations | Current Fitness: 0.904085 | Best Fitness: 0.904085 | No Improvement Count: 4
+Hill Climb Progress: iteration 6/200 | Chosen step:       No better mutations | Current Fitness: 0.904085 | Best Fitness: 0.904085 | No Improvement Count: 5
+Hill Climb Progress: iteration 7/200 | Chosen step:       No better mutations | Current Fitness: 0.904085 | Best Fitness: 0.904085 | No Improvement Count: 6
+Hill Climb Progress: iteration 8/200 | Chosen step:       No better mutations | Current Fitness: 0.904085 | Best Fitness: 0.904085 | No Improvement Count: 7
+Hill Climb Progress: iteration 9/200 | Chosen step:       No better mutations | Current Fitness: 0.904085 | Best Fitness: 0.904085 | No Improvement Count: 8
+Hill Climb Progress: iteration 10/200 | Chosen step:       No better mutations | Current Fitness: 0.904085 | Best Fitness: 0.904085 | No Improvement Count: 9
+
+Mutation counts:
+ Counter({'No better mutations': 10, 'Local Masking': 2})
+
+Final fitness: 0.9040854
+
+Final predictions:
+('n07930864', 'cup', 0.9040854)
+('n03063599', 'coffee_mug', 0.09119912)
+('n03950228', 'pitcher', 0.0014009166)
+('n04398044', 'teapot', 0.0011575482)
+('n03063689', 'coffeepot', 0.001008848)
+
+
+
+====== Processing image 4/10 ======
+Loaded image: images/goldfinch.jpeg
+Target label: hummingbird
+
+Baseline predictions (top-5):
+jay                   prob=0.26248
+hummingbird           prob=0.24425
+kite                  prob=0.10642
+magpie                prob=0.10628
+drake                 prob=0.04430
+
+
+Hill Climb Progress: iteration 0/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.274076 | Best Fitness: -0.274076 | No Improvement Count: 0   
+Hill Climb Progress: iteration 1/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.291488 | Best Fitness: -0.291488 | No Improvement Count: 0   
+Hill Climb Progress: iteration 2/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.312051 | Best Fitness: -0.312051 | No Improvement Count: 0   
+Hill Climb Progress: iteration 3/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.328006 | Best Fitness: -0.328006 | No Improvement Count: 0
+Hill Climb Progress: iteration 4/200 | Chosen step:            Additive Noise | Current Fitness: -0.352461 | Best Fitness: -0.352461 | No Improvement Count: 0
+Hill Climb Progress: iteration 5/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.372772 | Best Fitness: -0.372772 | No Improvement Count: 0
+Hill Climb Progress: iteration 6/200 | Chosen step:            Additive Noise | Current Fitness: -0.393247 | Best Fitness: -0.393247 | No Improvement Count: 0
+Hill Climb Progress: iteration 7/200 | Chosen step:            Additive Noise | Current Fitness: -0.414614 | Best Fitness: -0.414614 | No Improvement Count: 0
+Hill Climb Progress: iteration 8/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.430412 | Best Fitness: -0.430412 | No Improvement Count: 0
+Hill Climb Progress: iteration 9/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.448146 | Best Fitness: -0.448146 | No Improvement Count: 0
+Hill Climb Progress: iteration 10/200 | Chosen step:            Additive Noise | Current Fitness: -0.493557 | Best Fitness: -0.493557 | No Improvement Count: 0
+Hill Climb Progress: iteration 11/200 | Chosen step:            Additive Noise | Current Fitness: -0.524672 | Best Fitness: -0.524672 | No Improvement Count: 0
+Hill Climb Progress: iteration 12/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.541381 | Best Fitness: -0.541381 | No Improvement Count: 0
+Hill Climb Progress: iteration 13/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.559748 | Best Fitness: -0.559748 | No Improvement Count: 0
+Hill Climb Progress: iteration 14/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.578422 | Best Fitness: -0.578422 | No Improvement Count: 0
+Hill Climb Progress: iteration 15/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.596393 | Best Fitness: -0.596393 | No Improvement Count: 0
+Hill Climb Progress: iteration 16/200 | Chosen step:            Additive Noise | Current Fitness: -0.613122 | Best Fitness: -0.613122 | No Improvement Count: 0
+Hill Climb Progress: iteration 17/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.629297 | Best Fitness: -0.629297 | No Improvement Count: 0
+Hill Climb Progress: iteration 18/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.631993 | Best Fitness: -0.631993 | No Improvement Count: 0
+Hill Climb Progress: iteration 19/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.641925 | Best Fitness: -0.641925 | No Improvement Count: 0
+Hill Climb Progress: iteration 20/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.681267 | Best Fitness: -0.681267 | No Improvement Count: 0
+Hill Climb Progress: iteration 21/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.706335 | Best Fitness: -0.706335 | No Improvement Count: 0
+Hill Climb Progress: iteration 22/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.713574 | Best Fitness: -0.713574 | No Improvement Count: 0
+Hill Climb Progress: iteration 23/200 | Chosen step:            Additive Noise | Current Fitness: -0.732021 | Best Fitness: -0.732021 | No Improvement Count: 0
+Hill Climb Progress: iteration 24/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.739934 | Best Fitness: -0.739934 | No Improvement Count: 0
+Hill Climb Progress: iteration 25/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.750787 | Best Fitness: -0.750787 | No Improvement Count: 0
+Hill Climb Progress: iteration 26/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.759741 | Best Fitness: -0.759741 | No Improvement Count: 0
+Hill Climb Progress: iteration 27/200 | Chosen step:            Additive Noise | Current Fitness: -0.767159 | Best Fitness: -0.767159 | No Improvement Count: 0
+Hill Climb Progress: iteration 28/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.777986 | Best Fitness: -0.777986 | No Improvement Count: 0
+Hill Climb Progress: iteration 29/200 | Chosen step:            Additive Noise | Current Fitness: -0.788686 | Best Fitness: -0.788686 | No Improvement Count: 0
+Hill Climb Progress: iteration 30/200 | Chosen step:            Additive Noise | Current Fitness: -0.798003 | Best Fitness: -0.798003 | No Improvement Count: 0
+Hill Climb Progress: iteration 31/200 | Chosen step:            Additive Noise | Current Fitness: -0.806664 | Best Fitness: -0.806664 | No Improvement Count: 0
+Hill Climb Progress: iteration 32/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.823474 | Best Fitness: -0.823474 | No Improvement Count: 0
+Hill Climb Progress: iteration 33/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.836971 | Best Fitness: -0.836971 | No Improvement Count: 0
+Hill Climb Progress: iteration 34/200 | Chosen step:            Additive Noise | Current Fitness: -0.847627 | Best Fitness: -0.847627 | No Improvement Count: 0
+Hill Climb Progress: iteration 35/200 | Chosen step:            Additive Noise | Current Fitness: -0.854472 | Best Fitness: -0.854472 | No Improvement Count: 0
+Hill Climb Progress: iteration 36/200 | Chosen step:            Additive Noise | Current Fitness: -0.867826 | Best Fitness: -0.867826 | No Improvement Count: 0
+Hill Climb Progress: iteration 37/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.868146 | Best Fitness: -0.868146 | No Improvement Count: 0
+Hill Climb Progress: iteration 38/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.868686 | Best Fitness: -0.868686 | No Improvement Count: 0
+Hill Climb Progress: iteration 39/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.877629 | Best Fitness: -0.877629 | No Improvement Count: 0
+Hill Climb Progress: iteration 40/200 | Chosen step:            Additive Noise | Current Fitness: -0.882720 | Best Fitness: -0.882720 | No Improvement Count: 0
+Hill Climb Progress: iteration 41/200 | Chosen step:             Local Masking | Current Fitness: -0.885175 | Best Fitness: -0.885175 | No Improvement Count: 0
+Hill Climb Progress: iteration 42/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.888315 | Best Fitness: -0.888315 | No Improvement Count: 0
+Hill Climb Progress: iteration 43/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.892257 | Best Fitness: -0.892257 | No Improvement Count: 0
+Hill Climb Progress: iteration 44/200 | Chosen step:            Additive Noise | Current Fitness: -0.897601 | Best Fitness: -0.897601 | No Improvement Count: 0
+
+Mutation counts:
+ Counter({'Additive Noise': 17, 'Channel Perturbation': 14, 'Lines Perturbation': 14, 'Local Masking': 1})
+
+Final fitness: -0.90321994
+
+Final predictions:
+('n01580077', 'jay', 0.90321994)
+('n01833805', 'hummingbird', 0.024680194)
+('n01582220', 'magpie', 0.017250514)
+('n01828970', 'bee_eater', 0.0123310555)
+('n01537544', 'indigo_bunting', 0.009556175)
+
+
+
+====== Processing image 5/10 ======
+Loaded image: images/seashore.jpeg
+Target label: seashore
+
+Baseline predictions (top-5):
+seashore              prob=0.44709
+sandbar               prob=0.22422
+lakeside              prob=0.11806
+promontory            prob=0.04378
+breakwater            prob=0.02486
+
+
+Hill Climb Progress: iteration 0/200 | Chosen step:             Local Masking | Current Fitness: 0.382634 | Best Fitness: 0.382634 | No Improvement Count: 0
+Hill Climb Progress: iteration 1/200 | Chosen step:             Local Masking | Current Fitness: 0.350914 | Best Fitness: 0.350914 | No Improvement Count: 0
+Hill Climb Progress: iteration 2/200 | Chosen step:             Local Masking | Current Fitness: 0.331686 | Best Fitness: 0.331686 | No Improvement Count: 0
+Hill Climb Progress: iteration 3/200 | Chosen step:             Local Masking | Current Fitness: 0.317677 | Best Fitness: 0.317677 | No Improvement Count: 0
+Hill Climb Progress: iteration 4/200 | Chosen step:             Local Masking | Current Fitness: 0.311061 | Best Fitness: 0.311061 | No Improvement Count: 0
+Hill Climb Progress: iteration 5/200 | Chosen step:             Local Masking | Current Fitness: 0.305937 | Best Fitness: 0.305937 | No Improvement Count: 0
+Hill Climb Progress: iteration 6/200 | Chosen step:             Local Masking | Current Fitness: 0.302318 | Best Fitness: 0.302318 | No Improvement Count: 0
+Hill Climb Progress: iteration 7/200 | Chosen step:             Local Masking | Current Fitness: 0.298193 | Best Fitness: 0.298193 | No Improvement Count: 0
+Hill Climb Progress: iteration 8/200 | Chosen step:             Local Masking | Current Fitness: 0.296042 | Best Fitness: 0.296042 | No Improvement Count: 0
+Hill Climb Progress: iteration 9/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.290601 | Best Fitness: 0.290601 | No Improvement Count: 0
+Hill Climb Progress: iteration 10/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.277117 | Best Fitness: 0.277117 | No Improvement Count: 0
+Hill Climb Progress: iteration 11/200 | Chosen step:             Local Masking | Current Fitness: 0.270611 | Best Fitness: 0.270611 | No Improvement Count: 0
+Hill Climb Progress: iteration 12/200 | Chosen step:             Local Masking | Current Fitness: 0.266965 | Best Fitness: 0.266965 | No Improvement Count: 0
+Hill Climb Progress: iteration 13/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.261068 | Best Fitness: 0.261068 | No Improvement Count: 0
+Hill Climb Progress: iteration 14/200 | Chosen step:             Local Masking | Current Fitness: 0.254525 | Best Fitness: 0.254525 | No Improvement Count: 0
+Hill Climb Progress: iteration 15/200 | Chosen step:             Local Masking | Current Fitness: 0.251727 | Best Fitness: 0.251727 | No Improvement Count: 0
+Hill Climb Progress: iteration 16/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.242690 | Best Fitness: 0.242690 | No Improvement Count: 0
+Hill Climb Progress: iteration 17/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.236638 | Best Fitness: 0.236638 | No Improvement Count: 0
+Hill Climb Progress: iteration 18/200 | Chosen step:             Local Masking | Current Fitness: 0.230934 | Best Fitness: 0.230934 | No Improvement Count: 0
+Hill Climb Progress: iteration 19/200 | Chosen step:       No better mutations | Current Fitness: 0.230934 | Best Fitness: 0.230934 | No Improvement Count: 1
+Hill Climb Progress: iteration 20/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.230830 | Best Fitness: 0.230830 | No Improvement Count: 0
+Hill Climb Progress: iteration 21/200 | Chosen step:             Local Masking | Current Fitness: 0.226235 | Best Fitness: 0.226235 | No Improvement Count: 0
+Hill Climb Progress: iteration 22/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.225344 | Best Fitness: 0.225344 | No Improvement Count: 0
+Hill Climb Progress: iteration 23/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.218431 | Best Fitness: 0.218431 | No Improvement Count: 0
+Hill Climb Progress: iteration 24/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.206573 | Best Fitness: 0.206573 | No Improvement Count: 0
+Hill Climb Progress: iteration 25/200 | Chosen step:             Local Masking | Current Fitness: 0.199284 | Best Fitness: 0.199284 | No Improvement Count: 0
+Hill Climb Progress: iteration 26/200 | Chosen step:             Local Masking | Current Fitness: 0.198278 | Best Fitness: 0.198278 | No Improvement Count: 0
+Hill Climb Progress: iteration 27/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.197419 | Best Fitness: 0.197419 | No Improvement Count: 0
+Hill Climb Progress: iteration 28/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.193081 | Best Fitness: 0.193081 | No Improvement Count: 0
+Hill Climb Progress: iteration 29/200 | Chosen step:             Local Masking | Current Fitness: 0.187093 | Best Fitness: 0.187093 | No Improvement Count: 0
+Hill Climb Progress: iteration 30/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.180401 | Best Fitness: 0.180401 | No Improvement Count: 0
+Hill Climb Progress: iteration 31/200 | Chosen step:             Local Masking | Current Fitness: 0.172546 | Best Fitness: 0.172546 | No Improvement Count: 0
+Hill Climb Progress: iteration 32/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.171887 | Best Fitness: 0.171887 | No Improvement Count: 0
+Hill Climb Progress: iteration 33/200 | Chosen step:            Additive Noise | Current Fitness: -0.181927 | Best Fitness: -0.181927 | No Improvement Count: 0
+Hill Climb Progress: iteration 34/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.200093 | Best Fitness: -0.200093 | No Improvement Count: 0
+Hill Climb Progress: iteration 35/200 | Chosen step:            Additive Noise | Current Fitness: -0.208006 | Best Fitness: -0.208006 | No Improvement Count: 0
+Hill Climb Progress: iteration 36/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.225102 | Best Fitness: -0.225102 | No Improvement Count: 0
+Hill Climb Progress: iteration 37/200 | Chosen step:            Additive Noise | Current Fitness: -0.232131 | Best Fitness: -0.232131 | No Improvement Count: 0
+Hill Climb Progress: iteration 38/200 | Chosen step:            Additive Noise | Current Fitness: -0.236808 | Best Fitness: -0.236808 | No Improvement Count: 0
+Hill Climb Progress: iteration 39/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.245165 | Best Fitness: -0.245165 | No Improvement Count: 0
+Hill Climb Progress: iteration 40/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.251543 | Best Fitness: -0.251543 | No Improvement Count: 0
+Hill Climb Progress: iteration 41/200 | Chosen step:             Local Masking | Current Fitness: -0.256505 | Best Fitness: -0.256505 | No Improvement Count: 0
+Hill Climb Progress: iteration 42/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.263921 | Best Fitness: -0.263921 | No Improvement Count: 0
+Hill Climb Progress: iteration 43/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.276412 | Best Fitness: -0.276412 | No Improvement Count: 0
+Hill Climb Progress: iteration 44/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.284753 | Best Fitness: -0.284753 | No Improvement Count: 0
+Hill Climb Progress: iteration 45/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.295799 | Best Fitness: -0.295799 | No Improvement Count: 0
+Hill Climb Progress: iteration 46/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.314825 | Best Fitness: -0.314825 | No Improvement Count: 0
+Hill Climb Progress: iteration 47/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.329767 | Best Fitness: -0.329767 | No Improvement Count: 0
+Hill Climb Progress: iteration 48/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.336059 | Best Fitness: -0.336059 | No Improvement Count: 0
+Hill Climb Progress: iteration 49/200 | Chosen step:            Additive Noise | Current Fitness: -0.342416 | Best Fitness: -0.342416 | No Improvement Count: 0
+Hill Climb Progress: iteration 50/200 | Chosen step:            Additive Noise | Current Fitness: -0.362169 | Best Fitness: -0.362169 | No Improvement Count: 0
+Hill Climb Progress: iteration 51/200 | Chosen step:            Additive Noise | Current Fitness: -0.371318 | Best Fitness: -0.371318 | No Improvement Count: 0
+Hill Climb Progress: iteration 52/200 | Chosen step:             Local Masking | Current Fitness: -0.382193 | Best Fitness: -0.382193 | No Improvement Count: 0
+Hill Climb Progress: iteration 53/200 | Chosen step:            Additive Noise | Current Fitness: -0.394815 | Best Fitness: -0.394815 | No Improvement Count: 0
+Hill Climb Progress: iteration 54/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.396839 | Best Fitness: -0.396839 | No Improvement Count: 0
+Hill Climb Progress: iteration 55/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.400805 | Best Fitness: -0.400805 | No Improvement Count: 0
+Hill Climb Progress: iteration 56/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.404504 | Best Fitness: -0.404504 | No Improvement Count: 0
+Hill Climb Progress: iteration 57/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.436366 | Best Fitness: -0.436366 | No Improvement Count: 0
+Hill Climb Progress: iteration 58/200 | Chosen step:            Additive Noise | Current Fitness: -0.453169 | Best Fitness: -0.453169 | No Improvement Count: 0
+Hill Climb Progress: iteration 59/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.462386 | Best Fitness: -0.462386 | No Improvement Count: 0
+Hill Climb Progress: iteration 60/200 | Chosen step:            Additive Noise | Current Fitness: -0.469456 | Best Fitness: -0.469456 | No Improvement Count: 0
+Hill Climb Progress: iteration 61/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.483553 | Best Fitness: -0.483553 | No Improvement Count: 0
+Hill Climb Progress: iteration 62/200 | Chosen step:            Additive Noise | Current Fitness: -0.497404 | Best Fitness: -0.497404 | No Improvement Count: 0
+Hill Climb Progress: iteration 63/200 | Chosen step:             Local Masking | Current Fitness: -0.507650 | Best Fitness: -0.507650 | No Improvement Count: 0
+Hill Climb Progress: iteration 64/200 | Chosen step:            Additive Noise | Current Fitness: -0.511657 | Best Fitness: -0.511657 | No Improvement Count: 0
+Hill Climb Progress: iteration 65/200 | Chosen step:            Additive Noise | Current Fitness: -0.522741 | Best Fitness: -0.522741 | No Improvement Count: 0
+Hill Climb Progress: iteration 66/200 | Chosen step:             Local Masking | Current Fitness: -0.534805 | Best Fitness: -0.534805 | No Improvement Count: 0
+Hill Climb Progress: iteration 67/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.543442 | Best Fitness: -0.543442 | No Improvement Count: 0
+Hill Climb Progress: iteration 68/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.556783 | Best Fitness: -0.556783 | No Improvement Count: 0
+Hill Climb Progress: iteration 69/200 | Chosen step:             Local Masking | Current Fitness: -0.566765 | Best Fitness: -0.566765 | No Improvement Count: 0
+Hill Climb Progress: iteration 70/200 | Chosen step:            Additive Noise | Current Fitness: -0.574127 | Best Fitness: -0.574127 | No Improvement Count: 0
+Hill Climb Progress: iteration 71/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.579587 | Best Fitness: -0.579587 | No Improvement Count: 0
+Hill Climb Progress: iteration 72/200 | Chosen step:            Additive Noise | Current Fitness: -0.615552 | Best Fitness: -0.615552 | No Improvement Count: 0
+Hill Climb Progress: iteration 73/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.619345 | Best Fitness: -0.619345 | No Improvement Count: 0
+Hill Climb Progress: iteration 74/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.631066 | Best Fitness: -0.631066 | No Improvement Count: 0
+Hill Climb Progress: iteration 75/200 | Chosen step:       No better mutations | Current Fitness: -0.631066 | Best Fitness: -0.631066 | No Improvement Count: 1
+Hill Climb Progress: iteration 76/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.641484 | Best Fitness: -0.641484 | No Improvement Count: 0
+Hill Climb Progress: iteration 77/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.645901 | Best Fitness: -0.645901 | No Improvement Count: 0
+Hill Climb Progress: iteration 78/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.649559 | Best Fitness: -0.649559 | No Improvement Count: 0
+Hill Climb Progress: iteration 79/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.659325 | Best Fitness: -0.659325 | No Improvement Count: 0
+Hill Climb Progress: iteration 80/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.666024 | Best Fitness: -0.666024 | No Improvement Count: 0
+Hill Climb Progress: iteration 81/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.683482 | Best Fitness: -0.683482 | No Improvement Count: 0
+Hill Climb Progress: iteration 82/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.685791 | Best Fitness: -0.685791 | No Improvement Count: 0
+Hill Climb Progress: iteration 83/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.691019 | Best Fitness: -0.691019 | No Improvement Count: 0
+Hill Climb Progress: iteration 84/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.691185 | Best Fitness: -0.691185 | No Improvement Count: 0
+Hill Climb Progress: iteration 85/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.691551 | Best Fitness: -0.691551 | No Improvement Count: 0
+Hill Climb Progress: iteration 86/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.697865 | Best Fitness: -0.697865 | No Improvement Count: 0
+Hill Climb Progress: iteration 87/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.698853 | Best Fitness: -0.698853 | No Improvement Count: 0
+Hill Climb Progress: iteration 88/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.706744 | Best Fitness: -0.706744 | No Improvement Count: 0
+Hill Climb Progress: iteration 89/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.718382 | Best Fitness: -0.718382 | No Improvement Count: 0
+Hill Climb Progress: iteration 90/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.724724 | Best Fitness: -0.724724 | No Improvement Count: 0
+Hill Climb Progress: iteration 91/200 | Chosen step:            Additive Noise | Current Fitness: -0.728738 | Best Fitness: -0.728738 | No Improvement Count: 0
+Hill Climb Progress: iteration 92/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.736944 | Best Fitness: -0.736944 | No Improvement Count: 0
+Hill Climb Progress: iteration 93/200 | Chosen step:            Additive Noise | Current Fitness: -0.738846 | Best Fitness: -0.738846 | No Improvement Count: 0
+Hill Climb Progress: iteration 94/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.740939 | Best Fitness: -0.740939 | No Improvement Count: 0
+Hill Climb Progress: iteration 95/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.750523 | Best Fitness: -0.750523 | No Improvement Count: 0
+Hill Climb Progress: iteration 96/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.751824 | Best Fitness: -0.751824 | No Improvement Count: 0
+Hill Climb Progress: iteration 97/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.758001 | Best Fitness: -0.758001 | No Improvement Count: 0
+Hill Climb Progress: iteration 98/200 | Chosen step:            Additive Noise | Current Fitness: -0.767421 | Best Fitness: -0.767421 | No Improvement Count: 0
+Hill Climb Progress: iteration 99/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.768989 | Best Fitness: -0.768989 | No Improvement Count: 0
+Hill Climb Progress: iteration 100/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.774394 | Best Fitness: -0.774394 | No Improvement Count: 0
+Hill Climb Progress: iteration 101/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.782936 | Best Fitness: -0.782936 | No Improvement Count: 0
+Hill Climb Progress: iteration 102/200 | Chosen step:            Additive Noise | Current Fitness: -0.795474 | Best Fitness: -0.795474 | No Improvement Count: 0
+Hill Climb Progress: iteration 103/200 | Chosen step:            Additive Noise | Current Fitness: -0.807149 | Best Fitness: -0.807149 | No Improvement Count: 0
+Hill Climb Progress: iteration 104/200 | Chosen step:            Additive Noise | Current Fitness: -0.808614 | Best Fitness: -0.808614 | No Improvement Count: 0
+Hill Climb Progress: iteration 105/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.823057 | Best Fitness: -0.823057 | No Improvement Count: 0
+Hill Climb Progress: iteration 106/200 | Chosen step:             Local Masking | Current Fitness: -0.825731 | Best Fitness: -0.825731 | No Improvement Count: 0
+Hill Climb Progress: iteration 107/200 | Chosen step:            Additive Noise | Current Fitness: -0.826958 | Best Fitness: -0.826958 | No Improvement Count: 0
+Hill Climb Progress: iteration 108/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.832291 | Best Fitness: -0.832291 | No Improvement Count: 0
+Hill Climb Progress: iteration 109/200 | Chosen step:             Local Masking | Current Fitness: -0.838618 | Best Fitness: -0.838618 | No Improvement Count: 0
+Hill Climb Progress: iteration 110/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.839703 | Best Fitness: -0.839703 | No Improvement Count: 0
+Hill Climb Progress: iteration 111/200 | Chosen step:            Additive Noise | Current Fitness: -0.842297 | Best Fitness: -0.842297 | No Improvement Count: 0
+Hill Climb Progress: iteration 112/200 | Chosen step:             Local Masking | Current Fitness: -0.846992 | Best Fitness: -0.846992 | No Improvement Count: 0
+Hill Climb Progress: iteration 113/200 | Chosen step:             Local Masking | Current Fitness: -0.847864 | Best Fitness: -0.847864 | No Improvement Count: 0
+Hill Climb Progress: iteration 114/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.852037 | Best Fitness: -0.852037 | No Improvement Count: 0
+Hill Climb Progress: iteration 115/200 | Chosen step:       No better mutations | Current Fitness: -0.852037 | Best Fitness: -0.852037 | No Improvement Count: 1
+Hill Climb Progress: iteration 116/200 | Chosen step:       No better mutations | Current Fitness: -0.852037 | Best Fitness: -0.852037 | No Improvement Count: 2
+Hill Climb Progress: iteration 117/200 | Chosen step:       No better mutations | Current Fitness: -0.852037 | Best Fitness: -0.852037 | No Improvement Count: 3
+Hill Climb Progress: iteration 118/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.861643 | Best Fitness: -0.861643 | No Improvement Count: 0
+Hill Climb Progress: iteration 119/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.861979 | Best Fitness: -0.861979 | No Improvement Count: 0
+Hill Climb Progress: iteration 120/200 | Chosen step:       No better mutations | Current Fitness: -0.861979 | Best Fitness: -0.861979 | No Improvement Count: 1
+Hill Climb Progress: iteration 121/200 | Chosen step:       No better mutations | Current Fitness: -0.861979 | Best Fitness: -0.861979 | No Improvement Count: 2
+Hill Climb Progress: iteration 122/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.866014 | Best Fitness: -0.866014 | No Improvement Count: 0
+Hill Climb Progress: iteration 123/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.868797 | Best Fitness: -0.868797 | No Improvement Count: 0
+Hill Climb Progress: iteration 124/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.871956 | Best Fitness: -0.871956 | No Improvement Count: 0
+Hill Climb Progress: iteration 125/200 | Chosen step:       No better mutations | Current Fitness: -0.871956 | Best Fitness: -0.871956 | No Improvement Count: 1
+Hill Climb Progress: iteration 126/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.873357 | Best Fitness: -0.873357 | No Improvement Count: 0
+Hill Climb Progress: iteration 127/200 | Chosen step:       No better mutations | Current Fitness: -0.873357 | Best Fitness: -0.873357 | No Improvement Count: 1
+Hill Climb Progress: iteration 128/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.877788 | Best Fitness: -0.877788 | No Improvement Count: 0
+Hill Climb Progress: iteration 129/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.879447 | Best Fitness: -0.879447 | No Improvement Count: 0
+Hill Climb Progress: iteration 130/200 | Chosen step:             Local Masking | Current Fitness: -0.880965 | Best Fitness: -0.880965 | No Improvement Count: 0
+Hill Climb Progress: iteration 131/200 | Chosen step:       No better mutations | Current Fitness: -0.880965 | Best Fitness: -0.880965 | No Improvement Count: 1
+Hill Climb Progress: iteration 132/200 | Chosen step:       No better mutations | Current Fitness: -0.880965 | Best Fitness: -0.880965 | No Improvement Count: 2
+Hill Climb Progress: iteration 133/200 | Chosen step:       No better mutations | Current Fitness: -0.880965 | Best Fitness: -0.880965 | No Improvement Count: 3
+Hill Climb Progress: iteration 134/200 | Chosen step:       No better mutations | Current Fitness: -0.880965 | Best Fitness: -0.880965 | No Improvement Count: 4
+Hill Climb Progress: iteration 135/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.882420 | Best Fitness: -0.882420 | No Improvement Count: 0
+Hill Climb Progress: iteration 136/200 | Chosen step:             Local Masking | Current Fitness: -0.882951 | Best Fitness: -0.882951 | No Improvement Count: 0
+Hill Climb Progress: iteration 137/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.886340 | Best Fitness: -0.886340 | No Improvement Count: 0
+Hill Climb Progress: iteration 138/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.889122 | Best Fitness: -0.889122 | No Improvement Count: 0
+Hill Climb Progress: iteration 139/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.894619 | Best Fitness: -0.894619 | No Improvement Count: 0
+Hill Climb Progress: iteration 140/200 | Chosen step:       No better mutations | Current Fitness: -0.894619 | Best Fitness: -0.894619 | No Improvement Count: 1
+Hill Climb Progress: iteration 141/200 | Chosen step:       No better mutations | Current Fitness: -0.894619 | Best Fitness: -0.894619 | No Improvement Count: 2
+Hill Climb Progress: iteration 142/200 | Chosen step:       No better mutations | Current Fitness: -0.894619 | Best Fitness: -0.894619 | No Improvement Count: 3
+Hill Climb Progress: iteration 143/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.895775 | Best Fitness: -0.895775 | No Improvement Count: 0
+Hill Climb Progress: iteration 144/200 | Chosen step:       No better mutations | Current Fitness: -0.895775 | Best Fitness: -0.895775 | No Improvement Count: 1
+Hill Climb Progress: iteration 145/200 | Chosen step:       No better mutations | Current Fitness: -0.895775 | Best Fitness: -0.895775 | No Improvement Count: 2
+Hill Climb Progress: iteration 146/200 | Chosen step:       No better mutations | Current Fitness: -0.895775 | Best Fitness: -0.895775 | No Improvement Count: 3
+Hill Climb Progress: iteration 147/200 | Chosen step:       No better mutations | Current Fitness: -0.895775 | Best Fitness: -0.895775 | No Improvement Count: 4
+Hill Climb Progress: iteration 148/200 | Chosen step:       No better mutations | Current Fitness: -0.895775 | Best Fitness: -0.895775 | No Improvement Count: 5
+Hill Climb Progress: iteration 149/200 | Chosen step:       No better mutations | Current Fitness: -0.895775 | Best Fitness: -0.895775 | No Improvement Count: 6
+Hill Climb Progress: iteration 150/200 | Chosen step:            Additive Noise | Current Fitness: -0.896792 | Best Fitness: -0.896792 | No Improvement Count: 0
+Hill Climb Progress: iteration 151/200 | Chosen step:       No better mutations | Current Fitness: -0.896792 | Best Fitness: -0.896792 | No Improvement Count: 1
+Hill Climb Progress: iteration 152/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.897917 | Best Fitness: -0.897917 | No Improvement Count: 0
+Hill Climb Progress: iteration 153/200 | Chosen step:       No better mutations | Current Fitness: -0.897917 | Best Fitness: -0.897917 | No Improvement Count: 1
+Hill Climb Progress: iteration 154/200 | Chosen step:       No better mutations | Current Fitness: -0.897917 | Best Fitness: -0.897917 | No Improvement Count: 2
+Hill Climb Progress: iteration 155/200 | Chosen step:       No better mutations | Current Fitness: -0.897917 | Best Fitness: -0.897917 | No Improvement Count: 3
+Hill Climb Progress: iteration 156/200 | Chosen step:       No better mutations | Current Fitness: -0.897917 | Best Fitness: -0.897917 | No Improvement Count: 4
+Hill Climb Progress: iteration 157/200 | Chosen step:       No better mutations | Current Fitness: -0.897917 | Best Fitness: -0.897917 | No Improvement Count: 5
+Hill Climb Progress: iteration 158/200 | Chosen step:       No better mutations | Current Fitness: -0.897917 | Best Fitness: -0.897917 | No Improvement Count: 6
+Hill Climb Progress: iteration 159/200 | Chosen step:       No better mutations | Current Fitness: -0.897917 | Best Fitness: -0.897917 | No Improvement Count: 7
+
+Mutation counts:
+ Counter({'Lines Perturbation': 57, 'Local Masking': 30, 'No better mutations': 30, 'Additive Noise': 24, 'Channel Perturbation': 20})
+
+Final fitness: -0.9002927
+
+Final predictions:
+('n09332890', 'lakeside', 0.9002927)
+('n09421951', 'sandbar', 0.028752739)
+('n09428293', 'seashore', 0.01930005)
+('n03160309', 'dam', 0.007872722)
+('n02894605', 'breakwater', 0.0053101867)
+
+
+
+====== Processing image 6/10 ======
+Loaded image: images/bubble.jpeg
+Target label: bubble
+
+Baseline predictions (top-5):
+bubble                prob=0.99972
+cassette              prob=0.00007
+nipple                prob=0.00004
+fire_engine           prob=0.00004
+water_bottle          prob=0.00003
+
+
+Hill Climb Progress: iteration 0/200 | Chosen step:            Additive Noise | Current Fitness: 0.999640 | Best Fitness: 0.999640 | No Improvement Count: 0
+Hill Climb Progress: iteration 1/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.999608 | Best Fitness: 0.999608 | No Improvement Count: 0
+Hill Climb Progress: iteration 2/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.999529 | Best Fitness: 0.999529 | No Improvement Count: 0
+Hill Climb Progress: iteration 3/200 | Chosen step:            Additive Noise | Current Fitness: 0.999388 | Best Fitness: 0.999388 | No Improvement Count: 0
+Hill Climb Progress: iteration 4/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.999265 | Best Fitness: 0.999265 | No Improvement Count: 0
+Hill Climb Progress: iteration 5/200 | Chosen step:            Additive Noise | Current Fitness: 0.999128 | Best Fitness: 0.999128 | No Improvement Count: 0
+Hill Climb Progress: iteration 6/200 | Chosen step:            Additive Noise | Current Fitness: 0.998986 | Best Fitness: 0.998986 | No Improvement Count: 0
+Hill Climb Progress: iteration 7/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.998736 | Best Fitness: 0.998736 | No Improvement Count: 0
+Hill Climb Progress: iteration 8/200 | Chosen step:            Additive Noise | Current Fitness: 0.998557 | Best Fitness: 0.998557 | No Improvement Count: 0
+Hill Climb Progress: iteration 9/200 | Chosen step:            Additive Noise | Current Fitness: 0.998328 | Best Fitness: 0.998328 | No Improvement Count: 0
+Hill Climb Progress: iteration 10/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.997803 | Best Fitness: 0.997803 | No Improvement Count: 0
+Hill Climb Progress: iteration 11/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.997148 | Best Fitness: 0.997148 | No Improvement Count: 0
+Hill Climb Progress: iteration 12/200 | Chosen step:            Additive Noise | Current Fitness: 0.996837 | Best Fitness: 0.996837 | No Improvement Count: 0
+Hill Climb Progress: iteration 13/200 | Chosen step:            Additive Noise | Current Fitness: 0.996359 | Best Fitness: 0.996359 | No Improvement Count: 0
+Hill Climb Progress: iteration 14/200 | Chosen step:            Additive Noise | Current Fitness: 0.995632 | Best Fitness: 0.995632 | No Improvement Count: 0
+Hill Climb Progress: iteration 15/200 | Chosen step:            Additive Noise | Current Fitness: 0.993708 | Best Fitness: 0.993708 | No Improvement Count: 0
+Hill Climb Progress: iteration 16/200 | Chosen step:            Additive Noise | Current Fitness: 0.992920 | Best Fitness: 0.992920 | No Improvement Count: 0
+Hill Climb Progress: iteration 17/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.991526 | Best Fitness: 0.991526 | No Improvement Count: 0
+Hill Climb Progress: iteration 18/200 | Chosen step:            Additive Noise | Current Fitness: 0.989279 | Best Fitness: 0.989279 | No Improvement Count: 0
+Hill Climb Progress: iteration 19/200 | Chosen step:            Additive Noise | Current Fitness: 0.987728 | Best Fitness: 0.987728 | No Improvement Count: 0
+Hill Climb Progress: iteration 20/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.986194 | Best Fitness: 0.986194 | No Improvement Count: 0
+Hill Climb Progress: iteration 21/200 | Chosen step:            Additive Noise | Current Fitness: 0.981561 | Best Fitness: 0.981561 | No Improvement Count: 0
+Hill Climb Progress: iteration 22/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.976946 | Best Fitness: 0.976946 | No Improvement Count: 0
+Hill Climb Progress: iteration 23/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.974152 | Best Fitness: 0.974152 | No Improvement Count: 0
+Hill Climb Progress: iteration 24/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.967655 | Best Fitness: 0.967655 | No Improvement Count: 0
+Hill Climb Progress: iteration 25/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.964110 | Best Fitness: 0.964110 | No Improvement Count: 0
+Hill Climb Progress: iteration 26/200 | Chosen step:            Additive Noise | Current Fitness: 0.957178 | Best Fitness: 0.957178 | No Improvement Count: 0
+Hill Climb Progress: iteration 27/200 | Chosen step:            Additive Noise | Current Fitness: 0.948732 | Best Fitness: 0.948732 | No Improvement Count: 0
+Hill Climb Progress: iteration 28/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.939194 | Best Fitness: 0.939194 | No Improvement Count: 0
+Hill Climb Progress: iteration 29/200 | Chosen step:            Additive Noise | Current Fitness: 0.926656 | Best Fitness: 0.926656 | No Improvement Count: 0
+Hill Climb Progress: iteration 30/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.916901 | Best Fitness: 0.916901 | No Improvement Count: 0
+Hill Climb Progress: iteration 31/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.905607 | Best Fitness: 0.905607 | No Improvement Count: 0
+Hill Climb Progress: iteration 32/200 | Chosen step:            Additive Noise | Current Fitness: 0.887259 | Best Fitness: 0.887259 | No Improvement Count: 0
+Hill Climb Progress: iteration 33/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.867091 | Best Fitness: 0.867091 | No Improvement Count: 0
+Hill Climb Progress: iteration 34/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.824926 | Best Fitness: 0.824926 | No Improvement Count: 0
+Hill Climb Progress: iteration 35/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.800929 | Best Fitness: 0.800929 | No Improvement Count: 0
+Hill Climb Progress: iteration 36/200 | Chosen step:            Additive Noise | Current Fitness: 0.770786 | Best Fitness: 0.770786 | No Improvement Count: 0
+Hill Climb Progress: iteration 37/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.740056 | Best Fitness: 0.740056 | No Improvement Count: 0
+Hill Climb Progress: iteration 38/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.695526 | Best Fitness: 0.695526 | No Improvement Count: 0
+Hill Climb Progress: iteration 39/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.663854 | Best Fitness: 0.663854 | No Improvement Count: 0
+Hill Climb Progress: iteration 40/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.633107 | Best Fitness: 0.633107 | No Improvement Count: 0
+Hill Climb Progress: iteration 41/200 | Chosen step:            Additive Noise | Current Fitness: 0.604942 | Best Fitness: 0.604942 | No Improvement Count: 0
+Hill Climb Progress: iteration 42/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.574453 | Best Fitness: 0.574453 | No Improvement Count: 0
+Hill Climb Progress: iteration 43/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.497909 | Best Fitness: 0.497909 | No Improvement Count: 0
+Hill Climb Progress: iteration 44/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.507697 | Best Fitness: -0.507697 | No Improvement Count: 0
+Hill Climb Progress: iteration 45/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.544027 | Best Fitness: -0.544027 | No Improvement Count: 0
+Hill Climb Progress: iteration 46/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.556762 | Best Fitness: -0.556762 | No Improvement Count: 0
+Hill Climb Progress: iteration 47/200 | Chosen step:            Additive Noise | Current Fitness: -0.579096 | Best Fitness: -0.579096 | No Improvement Count: 0
+Hill Climb Progress: iteration 48/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.618700 | Best Fitness: -0.618700 | No Improvement Count: 0
+Hill Climb Progress: iteration 49/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.648317 | Best Fitness: -0.648317 | No Improvement Count: 0
+Hill Climb Progress: iteration 50/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.680511 | Best Fitness: -0.680511 | No Improvement Count: 0
+Hill Climb Progress: iteration 51/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.719840 | Best Fitness: -0.719840 | No Improvement Count: 0
+Hill Climb Progress: iteration 52/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.735421 | Best Fitness: -0.735421 | No Improvement Count: 0
+Hill Climb Progress: iteration 53/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.759788 | Best Fitness: -0.759788 | No Improvement Count: 0
+Hill Climb Progress: iteration 54/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.786868 | Best Fitness: -0.786868 | No Improvement Count: 0
+Hill Climb Progress: iteration 55/200 | Chosen step:             Local Masking | Current Fitness: -0.801100 | Best Fitness: -0.801100 | No Improvement Count: 0
+Hill Climb Progress: iteration 56/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.810827 | Best Fitness: -0.810827 | No Improvement Count: 0
+Hill Climb Progress: iteration 57/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.827560 | Best Fitness: -0.827560 | No Improvement Count: 0
+Hill Climb Progress: iteration 58/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.848550 | Best Fitness: -0.848550 | No Improvement Count: 0
+Hill Climb Progress: iteration 59/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.867768 | Best Fitness: -0.867768 | No Improvement Count: 0
+Hill Climb Progress: iteration 60/200 | Chosen step:            Additive Noise | Current Fitness: -0.881683 | Best Fitness: -0.881683 | No Improvement Count: 0
+Hill Climb Progress: iteration 61/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.888364 | Best Fitness: -0.888364 | No Improvement Count: 0
+Hill Climb Progress: iteration 62/200 | Chosen step:            Additive Noise | Current Fitness: -0.897409 | Best Fitness: -0.897409 | No Improvement Count: 0
+
+Mutation counts:
+ Counter({'Channel Perturbation': 26, 'Additive Noise': 23, 'Lines Perturbation': 14, 'Local Masking': 1})
+
+Final fitness: -0.9020743
+
+Final predictions:
+('n02978881', 'cassette', 0.9020743)
+('n09229709', 'bubble', 0.05647091)
+('n04392985', 'tape_player', 0.012940855)
+('n03014705', 'chest', 0.005916263)
+('n02979186', 'cassette_player', 0.0041392036)
+
+
+
+====== Processing image 7/10 ======
+Loaded image: images/goblet.jpeg
+Target label: goblet
+
+Baseline predictions (top-5):
+cocktail_shaker       prob=0.78216
+eggnog                prob=0.19274
+goblet                prob=0.01317
+beer_glass            prob=0.00486
+espresso              prob=0.00347
+
+
+Hill Climb Progress: iteration 0/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.784075 | Best Fitness: -0.784075 | No Improvement Count: 0
+Hill Climb Progress: iteration 1/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.807056 | Best Fitness: -0.807056 | No Improvement Count: 0
+Hill Climb Progress: iteration 2/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.824118 | Best Fitness: -0.824118 | No Improvement Count: 0
+Hill Climb Progress: iteration 3/200 | Chosen step:            Additive Noise | Current Fitness: -0.828574 | Best Fitness: -0.828574 | No Improvement Count: 0
+Hill Climb Progress: iteration 4/200 | Chosen step:            Additive Noise | Current Fitness: -0.838511 | Best Fitness: -0.838511 | No Improvement Count: 0
+Hill Climb Progress: iteration 5/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.843820 | Best Fitness: -0.843820 | No Improvement Count: 0
+Hill Climb Progress: iteration 6/200 | Chosen step:            Additive Noise | Current Fitness: -0.849152 | Best Fitness: -0.849152 | No Improvement Count: 0
+Hill Climb Progress: iteration 7/200 | Chosen step:            Additive Noise | Current Fitness: -0.854637 | Best Fitness: -0.854637 | No Improvement Count: 0
+Hill Climb Progress: iteration 8/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.866894 | Best Fitness: -0.866894 | No Improvement Count: 0
+Hill Climb Progress: iteration 9/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.872124 | Best Fitness: -0.872124 | No Improvement Count: 0
+Hill Climb Progress: iteration 10/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.884070 | Best Fitness: -0.884070 | No Improvement Count: 0
+Hill Climb Progress: iteration 11/200 | Chosen step:            Additive Noise | Current Fitness: -0.892356 | Best Fitness: -0.892356 | No Improvement Count: 0
+Hill Climb Progress: iteration 12/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.894163 | Best Fitness: -0.894163 | No Improvement Count: 0
+
+Mutation counts:
+ Counter({'Channel Perturbation': 5, 'Additive Noise': 5, 'Lines Perturbation': 4})
+
+Final fitness: -0.903435
+
+Final predictions:
+('n03062245', 'cocktail_shaker', 0.903435)
+('n07932039', 'eggnog', 0.08243157)
+('n03443371', 'goblet', 0.009593006)
+('n07920052', 'espresso', 0.0015007332)
+('n02823750', 'beer_glass', 0.0014936739)
+
+
+====== Processing image 8/10 ======
+Loaded image: images/hay.jpeg
+Target label: hay
+
+Baseline predictions (top-5):
+hay                   prob=0.97001
+thatch                prob=0.00330
+dam                   prob=0.00320
+broom                 prob=0.00197
+brown_bear            prob=0.00155
+
+
+Hill Climb Progress: iteration 0/200 | Chosen step:            Additive Noise | Current Fitness: 0.965846 | Best Fitness: 0.965846 | No Improvement Count: 0
+Hill Climb Progress: iteration 1/200 | Chosen step:            Additive Noise | Current Fitness: 0.962549 | Best Fitness: 0.962549 | No Improvement Count: 0
+Hill Climb Progress: iteration 2/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.951426 | Best Fitness: 0.951426 | No Improvement Count: 0
+Hill Climb Progress: iteration 3/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.945200 | Best Fitness: 0.945200 | No Improvement Count: 0
+Hill Climb Progress: iteration 4/200 | Chosen step:            Additive Noise | Current Fitness: 0.935810 | Best Fitness: 0.935810 | No Improvement Count: 0
+Hill Climb Progress: iteration 5/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.923345 | Best Fitness: 0.923345 | No Improvement Count: 0
+Hill Climb Progress: iteration 6/200 | Chosen step:            Additive Noise | Current Fitness: 0.913580 | Best Fitness: 0.913580 | No Improvement Count: 0
+Hill Climb Progress: iteration 7/200 | Chosen step:            Additive Noise | Current Fitness: 0.902259 | Best Fitness: 0.902259 | No Improvement Count: 0
+Hill Climb Progress: iteration 8/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.895051 | Best Fitness: 0.895051 | No Improvement Count: 0
+Hill Climb Progress: iteration 9/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.881568 | Best Fitness: 0.881568 | No Improvement Count: 0
+Hill Climb Progress: iteration 10/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.873004 | Best Fitness: 0.873004 | No Improvement Count: 0
+Hill Climb Progress: iteration 11/200 | Chosen step:            Additive Noise | Current Fitness: 0.854947 | Best Fitness: 0.854947 | No Improvement Count: 0
+Hill Climb Progress: iteration 12/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.830774 | Best Fitness: 0.830774 | No Improvement Count: 0
+Hill Climb Progress: iteration 13/200 | Chosen step:            Additive Noise | Current Fitness: 0.804316 | Best Fitness: 0.804316 | No Improvement Count: 0
+Hill Climb Progress: iteration 14/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.791669 | Best Fitness: 0.791669 | No Improvement Count: 0
+Hill Climb Progress: iteration 15/200 | Chosen step:            Additive Noise | Current Fitness: 0.745871 | Best Fitness: 0.745871 | No Improvement Count: 0
+Hill Climb Progress: iteration 16/200 | Chosen step:            Additive Noise | Current Fitness: 0.697276 | Best Fitness: 0.697276 | No Improvement Count: 0
+Hill Climb Progress: iteration 17/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.660710 | Best Fitness: 0.660710 | No Improvement Count: 0
+Hill Climb Progress: iteration 18/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.644908 | Best Fitness: 0.644908 | No Improvement Count: 0
+Hill Climb Progress: iteration 19/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.611815 | Best Fitness: 0.611815 | No Improvement Count: 0
+Hill Climb Progress: iteration 20/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.579703 | Best Fitness: 0.579703 | No Improvement Count: 0
+Hill Climb Progress: iteration 21/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.555967 | Best Fitness: 0.555967 | No Improvement Count: 0
+Hill Climb Progress: iteration 22/200 | Chosen step:            Additive Noise | Current Fitness: 0.522799 | Best Fitness: 0.522799 | No Improvement Count: 0
+Hill Climb Progress: iteration 23/200 | Chosen step:            Additive Noise | Current Fitness: 0.491380 | Best Fitness: 0.491380 | No Improvement Count: 0
+Hill Climb Progress: iteration 24/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.427745 | Best Fitness: 0.427745 | No Improvement Count: 0
+Hill Climb Progress: iteration 25/200 | Chosen step:            Additive Noise | Current Fitness: 0.395520 | Best Fitness: 0.395520 | No Improvement Count: 0
+Hill Climb Progress: iteration 26/200 | Chosen step:            Additive Noise | Current Fitness: 0.368888 | Best Fitness: 0.368888 | No Improvement Count: 0
+Hill Climb Progress: iteration 27/200 | Chosen step:            Additive Noise | Current Fitness: 0.354279 | Best Fitness: 0.354279 | No Improvement Count: 0
+Hill Climb Progress: iteration 28/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.342683 | Best Fitness: 0.342683 | No Improvement Count: 0
+Hill Climb Progress: iteration 29/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.307401 | Best Fitness: 0.307401 | No Improvement Count: 0
+Hill Climb Progress: iteration 30/200 | Chosen step:            Additive Noise | Current Fitness: 0.293792 | Best Fitness: 0.293792 | No Improvement Count: 0
+Hill Climb Progress: iteration 31/200 | Chosen step:            Additive Noise | Current Fitness: 0.278240 | Best Fitness: 0.278240 | No Improvement Count: 0
+Hill Climb Progress: iteration 32/200 | Chosen step:            Additive Noise | Current Fitness: 0.249720 | Best Fitness: 0.249720 | No Improvement Count: 0
+Hill Climb Progress: iteration 33/200 | Chosen step:            Additive Noise | Current Fitness: 0.242720 | Best Fitness: 0.242720 | No Improvement Count: 0
+Hill Climb Progress: iteration 34/200 | Chosen step:            Additive Noise | Current Fitness: 0.206947 | Best Fitness: 0.206947 | No Improvement Count: 0
+Hill Climb Progress: iteration 35/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.187555 | Best Fitness: 0.187555 | No Improvement Count: 0
+Hill Climb Progress: iteration 36/200 | Chosen step:            Additive Noise | Current Fitness: 0.175559 | Best Fitness: 0.175559 | No Improvement Count: 0
+Hill Climb Progress: iteration 37/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.189176 | Best Fitness: -0.189176 | No Improvement Count: 0
+Hill Climb Progress: iteration 38/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.198658 | Best Fitness: -0.198658 | No Improvement Count: 0
+Hill Climb Progress: iteration 39/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.209505 | Best Fitness: -0.209505 | No Improvement Count: 0
+Hill Climb Progress: iteration 40/200 | Chosen step:            Additive Noise | Current Fitness: -0.231667 | Best Fitness: -0.231667 | No Improvement Count: 0
+Hill Climb Progress: iteration 41/200 | Chosen step:            Additive Noise | Current Fitness: -0.254298 | Best Fitness: -0.254298 | No Improvement Count: 0
+Hill Climb Progress: iteration 42/200 | Chosen step:            Additive Noise | Current Fitness: -0.261058 | Best Fitness: -0.261058 | No Improvement Count: 0
+Hill Climb Progress: iteration 43/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.275652 | Best Fitness: -0.275652 | No Improvement Count: 0
+Hill Climb Progress: iteration 44/200 | Chosen step:            Additive Noise | Current Fitness: -0.307597 | Best Fitness: -0.307597 | No Improvement Count: 0
+Hill Climb Progress: iteration 45/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.329678 | Best Fitness: -0.329678 | No Improvement Count: 0
+Hill Climb Progress: iteration 46/200 | Chosen step:            Additive Noise | Current Fitness: -0.382146 | Best Fitness: -0.382146 | No Improvement Count: 0
+Hill Climb Progress: iteration 47/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.395350 | Best Fitness: -0.395350 | No Improvement Count: 0
+Hill Climb Progress: iteration 48/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.419318 | Best Fitness: -0.419318 | No Improvement Count: 0
+Hill Climb Progress: iteration 49/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.451078 | Best Fitness: -0.451078 | No Improvement Count: 0
+Hill Climb Progress: iteration 50/200 | Chosen step:            Additive Noise | Current Fitness: -0.481618 | Best Fitness: -0.481618 | No Improvement Count: 0
+Hill Climb Progress: iteration 51/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.498015 | Best Fitness: -0.498015 | No Improvement Count: 0
+Hill Climb Progress: iteration 52/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.515400 | Best Fitness: -0.515400 | No Improvement Count: 0
+Hill Climb Progress: iteration 53/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.540663 | Best Fitness: -0.540663 | No Improvement Count: 0
+Hill Climb Progress: iteration 54/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.550254 | Best Fitness: -0.550254 | No Improvement Count: 0
+Hill Climb Progress: iteration 55/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.582676 | Best Fitness: -0.582676 | No Improvement Count: 0
+Hill Climb Progress: iteration 56/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.591602 | Best Fitness: -0.591602 | No Improvement Count: 0
+Hill Climb Progress: iteration 57/200 | Chosen step:            Additive Noise | Current Fitness: -0.609650 | Best Fitness: -0.609650 | No Improvement Count: 0
+Hill Climb Progress: iteration 58/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.647188 | Best Fitness: -0.647188 | No Improvement Count: 0
+Hill Climb Progress: iteration 59/200 | Chosen step:            Additive Noise | Current Fitness: -0.658389 | Best Fitness: -0.658389 | No Improvement Count: 0
+Hill Climb Progress: iteration 60/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.680655 | Best Fitness: -0.680655 | No Improvement Count: 0
+Hill Climb Progress: iteration 61/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.700314 | Best Fitness: -0.700314 | No Improvement Count: 0
+Hill Climb Progress: iteration 62/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.719967 | Best Fitness: -0.719967 | No Improvement Count: 0
+Hill Climb Progress: iteration 63/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.745955 | Best Fitness: -0.745955 | No Improvement Count: 0
+Hill Climb Progress: iteration 64/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.764113 | Best Fitness: -0.764113 | No Improvement Count: 0
+Hill Climb Progress: iteration 65/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.781330 | Best Fitness: -0.781330 | No Improvement Count: 0
+Hill Climb Progress: iteration 66/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.791591 | Best Fitness: -0.791591 | No Improvement Count: 0
+Hill Climb Progress: iteration 67/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.798554 | Best Fitness: -0.798554 | No Improvement Count: 0
+Hill Climb Progress: iteration 68/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.824036 | Best Fitness: -0.824036 | No Improvement Count: 0
+Hill Climb Progress: iteration 69/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.831995 | Best Fitness: -0.831995 | No Improvement Count: 0
+Hill Climb Progress: iteration 70/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.839734 | Best Fitness: -0.839734 | No Improvement Count: 0
+Hill Climb Progress: iteration 71/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.854631 | Best Fitness: -0.854631 | No Improvement Count: 0
+Hill Climb Progress: iteration 72/200 | Chosen step:       No better mutations | Current Fitness: -0.854631 | Best Fitness: -0.854631 | No Improvement Count: 1
+Hill Climb Progress: iteration 73/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.856627 | Best Fitness: -0.856627 | No Improvement Count: 0
+Hill Climb Progress: iteration 74/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.867289 | Best Fitness: -0.867289 | No Improvement Count: 0
+Hill Climb Progress: iteration 75/200 | Chosen step:            Additive Noise | Current Fitness: -0.881818 | Best Fitness: -0.881818 | No Improvement Count: 0
+Hill Climb Progress: iteration 76/200 | Chosen step:       No better mutations | Current Fitness: -0.881818 | Best Fitness: -0.881818 | No Improvement Count: 1
+Hill Climb Progress: iteration 77/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.883119 | Best Fitness: -0.883119 | No Improvement Count: 0
+Hill Climb Progress: iteration 78/200 | Chosen step:            Additive Noise | Current Fitness: -0.885505 | Best Fitness: -0.885505 | No Improvement Count: 0
+Hill Climb Progress: iteration 79/200 | Chosen step:             Local Masking | Current Fitness: -0.886860 | Best Fitness: -0.886860 | No Improvement Count: 0
+Hill Climb Progress: iteration 80/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.894668 | Best Fitness: -0.894668 | No Improvement Count: 0
+Hill Climb Progress: iteration 81/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.897103 | Best Fitness: -0.897103 | No Improvement Count: 0
+
+Mutation counts:
+ Counter({'Channel Perturbation': 31, 'Additive Noise': 30, 'Lines Perturbation': 19, 'No better mutations': 2, 'Local Masking': 1})
+
+Final fitness: -0.90285575
+
+Final predictions:
+('n03160309', 'dam', 0.90285575)
+('n04606251', 'wreck', 0.020417677)
+('n07802026', 'hay', 0.011707322)
+('n09246464', 'cliff', 0.009022223)
+('n09332890', 'lakeside', 0.0066176406)
+
+
+
+====== Processing image 9/10 ======
+Loaded image: images/water_bottle.jpeg
+Target label: water jug
+
+Baseline predictions (top-5):
+water_bottle          prob=0.28374
+water_jug             prob=0.17100
+lotion                prob=0.13966
+soap_dispenser        prob=0.10506
+nipple                prob=0.05903
+
+
+Hill Climb Progress: iteration 0/200 | Chosen step:            Additive Noise | Current Fitness: -0.320409 | Best Fitness: -0.320409 | No Improvement Count: 0
+Hill Climb Progress: iteration 1/200 | Chosen step:            Additive Noise | Current Fitness: -0.355406 | Best Fitness: -0.355406 | No Improvement Count: 0
+Hill Climb Progress: iteration 2/200 | Chosen step:            Additive Noise | Current Fitness: -0.376525 | Best Fitness: -0.376525 | No Improvement Count: 0
+Hill Climb Progress: iteration 3/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.390767 | Best Fitness: -0.390767 | No Improvement Count: 0
+Hill Climb Progress: iteration 4/200 | Chosen step:             Local Masking | Current Fitness: -0.396050 | Best Fitness: -0.396050 | No Improvement Count: 0
+Hill Climb Progress: iteration 5/200 | Chosen step:            Additive Noise | Current Fitness: -0.410665 | Best Fitness: -0.410665 | No Improvement Count: 0
+Hill Climb Progress: iteration 6/200 | Chosen step:            Additive Noise | Current Fitness: -0.420506 | Best Fitness: -0.420506 | No Improvement Count: 0
+Hill Climb Progress: iteration 7/200 | Chosen step:            Additive Noise | Curn step:      Channel Perturbation | Current Fitness: -0.507494 | Best Fitness: -0.507494 | No Improvement Count: 0
+Hill Climb Progress: iteration 15/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.514893 | Best Fitness: -0.514893 | No Improvement Count: 0       
+Hill Climb Progress: iteration 16/200 | Chosen step:            Additive Noise | Current Fitness: -0.524659 | Best Fitness: -0.524659 | No Improvement Count: 0       
+Hill Climb Progress: iteration 17/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.536101 | Best Fitness: -0.536101 | No Improvement Count: 0       
+Hill Climb Progress: iteration 18/200 | Chosen step:      Channel Perturbation | Cun step:      Channel Perturbation | Current Fitness: -0.507494 | Best Fitness: -0.507494 | No Improvement Count: 0
+Hill Climb Progress: iteration 15/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.514893 | Best Fitness: -0.514893 | No Improvement Count: 0       
+Hill Climb Progress: iteration 16/200 | Chosen step:            Additive Noise | Current Fitness: -0.524659 | Best Fitness: -0.524659 | No Improvement Count: 0       
+n step:      Channel Perturbation | Current Fitness: -0.507494 | Best Fitness: -0.507494 | No Improvement Count: 0
+Hill Climb Progress: iteration 15/200 | Chosen step:      Channel Perturbation | Cun step:      Channel Perturbation | Current Fitness: -0.507494 | Best Fitness: -0.507494 | No Improvement Count: 0
+n step:      Channel Perturbation | Current Fitness: -0.507494 | Best Fitness: -0.5n step:      Channel Perturbation | Current Fitness: -0.507494 | Best Fitness: -0.507494 | No Improvement Count: 0
+Hill Climb Progress: iteration 15/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.514893 | Best Fitness: -0.514893 | No Improvement Count: 0       
+Hill Climb Progress: iteration 15/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.514893 | Best Fitness: -0.514893 | No Improvement Count: 0       
+rrent Fitness: -0.514893 | Best Fitness: -0.514893 | No Improvement Count: 0       
+Hill Climb Progress: iteration 16/200 | Chosen step:            Additive Noise | Current Fitness: -0.524659 | Best Fitness: -0.524659 | No Improvement Count: 0       
+Hill Climb Progress: iteration 17/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.536101 | Best Fitness: -0.536101 | No Improvement Count: 0       
+Hill Climb Progress: iteration 18/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.561447 | Best Fitness: -0.561447 | No Improvement Count: 0       
+Hill Climb Progress: iteration 19/200 | Chosen step:            Additive Noise | Current Fitness: -0.566924 | Best Fitness: -0.566924 | No Improvement Count: 0       
+Hill Climb Progress: iteration 20/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.579477 | Best Fitness: -0.579477 | No Improvement Count: 0       
+Hill Climb Progress: iteration 21/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.586421 | Best Fitness: -0.586421 | No Improvement Count: 0       
+Hill Climb Progress: iteration 22/200 | Chosen step:            Additive Noise | Current Fitness: -0.593687 | Best Fitness: -0.593687 | No Improvement Count: 0       
+Hill Climb Progress: iteration 23/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.601193 | Best Fitness: -0.601193 | No Improvement Count: 0       
+Hill Climb Progress: iteration 24/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.605663 | Best Fitness: -0.605663 | No Improvement Count: 0       
+Hill Climb Progress: iteration 25/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.610309 | Best Fitness: -0.610309 | No Improvement Count: 0       
+Hill Climb Progress: iteration 26/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.623247 | Best Fitness: -0.623247 | No Improvement Count: 0       
+Hill Climb Progress: iteration 27/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.636921 | Best Fitness: -0.636921 | No Improvement Count: 0       
+Hill Climb Progress: iteration 28/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.654677 | Best Fitness: -0.654677 | No Improvement Count: 0       
+Hill Climb Progress: iteration 29/200 | Chosen step:            Additive Noise | Current Fitness: -0.659046 | Best Fitness: -0.659046 | No Improvement Count: 0       
+Hill Climb Progress: iteration 30/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.676495 | Best Fitness: -0.676495 | No Improvement Count: 0       
+Hill Climb Progress: iteration 31/200 | Chosen step:            Additive Noise | Current Fitness: -0.683778 | Best Fitness: -0.683778 | No Improvement Count: 0       
+Hill Climb Progress: iteration 32/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.694193 | Best Fitness: -0.694193 | No Improvement Count: 0       
+Hill Climb Progress: iteration 33/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.703955 | Best Fitness: -0.703955 | No Improvement Count: 0       
+Hill Climb Progress: iteration 34/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.711468 | Best Fitness: -0.711468 | No Improvement Count: 0       
+Hill Climb Progress: iteration 35/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.720993 | Best Fitness: -0.720993 | No Improvement Count: 0       
+Hill Climb Progress: iteration 36/200 | Chosen step:            Additive Noise | Current Fitness: -0.732660 | Best Fitness: -0.732660 | No Improvement Count: 0       
+Hill Climb Progress: iteration 37/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.735218 | Best Fitness: -0.735218 | No Improvement Count: 0       
+Hill Climb Progress: iteration 38/200 | Chosen step:             Local Masking | Current Fitness: -0.741179 | Best Fitness: -0.741179 | No Improvement Count: 0       
+Hill Climb Progress: iteration 39/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.748714 | Best Fitness: -0.748714 | No Improvement Count: 0       
+Hill Climb Progress: iteration 40/200 | Chosen step:            Additive Noise | Current Fitness: -0.750276 | Best Fitness: -0.750276 | No Improvement Count: 0       
+Hill Climb Progress: iteration 41/200 | Chosen step:            Additive Noise | Current Fitness: -0.758136 | Best Fitness: -0.758136 | No Improvement Count: 0       
+Hill Climb Progress: iteration 42/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.765410 | Best Fitness: -0.765410 | No Improvement Count: 0       
+Hill Climb Progress: iteration 43/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.778589 | Best Fitness: -0.778589 | No Improvement Count: 0       
+Hill Climb Progress: iteration 44/200 | Chosen step:             Local Masking | Current Fitness: -0.784261 | Best Fitness: -0.784261 | No Improvement Count: 0       
+Hill Climb Progress: iteration 45/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.788093 | Best Fitness: -0.788093 | No Improvement Count: 0       
+Hill Climb Progress: iteration 46/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.802822 | Best Fitness: -0.802822 | No Improvement Count: 0       
+Hill Climb Progress: iteration 47/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.804866 | Best Fitness: -0.804866 | No Improvement Count: 0       
+Hill Climb Progress: iteration 48/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.807894 | Best Fitness: -0.807894 | No Improvement Count: 0       
+Hill Climb Progress: iteration 49/200 | Chosen step:       No better mutations | Current Fitness: -0.807894 | Best Fitness: -0.807894 | No Improvement Count: 1       
+Hill Climb Progress: iteration 50/200 | Chosen step:       No better mutations | Current Fitness: -0.807894 | Best Fitness: -0.807894 | No Improvement Count: 2       
+Hill Climb Progress: iteration 51/200 | Chosen step:       No better mutations | Current Fitness: -0.807894 | Best Fitness: -0.807894 | No Improvement Count: 3       
+Hill Climb Progress: iteration 52/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.813997 | Best Fitness: -0.813997 | No Improvement Count: 0       
+Hill Climb Progress: iteration 53/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.814661 | Best Fitness: -0.814661 | No Improvement Count: 0       
+Hill Climb Progress: iteration 54/200 | Chosen step:            Additive Noise | Current Fitness: -0.821264 | Best Fitness: -0.821264 | No Improvement Count: 0       
+Hill Climb Progress: iteration 55/200 | Chosen step:       No better mutations | Current Fitness: -0.821264 | Best Fitness: -0.821264 | No Improvement Count: 1       
+Hill Climb Progress: iteration 56/200 | Chosen step:            Additive Noise | Current Fitness: -0.821873 | Best Fitness: -0.821873 | No Improvement Count: 0       
+Hill Climb Progress: iteration 57/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.827204 | Best Fitness: -0.827204 | No Improvement Count: 0       
+Hill Climb Progress: iteration 58/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.827348 | Best Fitness: -0.827348 | No Improvement Count: 0       
+Hill Climb Progress: iteration 59/200 | Chosen step:       No better mutations | Current Fitness: -0.827348 | Best Fitness: -0.827348 | No Improvement Count: 1       
+Hill Climb Progress: iteration 60/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.828514 | Best Fitness: -0.828514 | No Improvement Count: 0       
+Hill Climb Progress: iteration 61/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.841009 | Best Fitness: -0.841009 | No Improvement Count: 0       
+Hill Climb Progress: iteration 62/200 | Chosen step:            Additive Noise | Current Fitness: -0.845176 | Best Fitness: -0.845176 | No Improvement Count: 0       
+Hill Climb Progress: iteration 63/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.848056 | Best Fitness: -0.848056 | No Improvement Count: 0       
+Hill Climb Progress: iteration 64/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.854142 | Best Fitness: -0.854142 | No Improvement Count: 0       
+Hill Climb Progress: iteration 65/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.861889 | Best Fitness: -0.861889 | No Improvement Count: 0       
+Hill Climb Progress: iteration 66/200 | Chosen step:       No better mutations | Current Fitness: -0.861889 | Best Fitness: -0.861889 | No Improvement Count: 1       
+Hill Climb Progress: iteration 67/200 | Chosen step:            Additive Noise | Current Fitness: -0.863908 | Best Fitness: -0.863908 | No Improvement Count: 0       
+Hill Climb Progress: iteration 68/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.864474 | Best Fitness: -0.864474 | No Improvement Count: 0       
+Hill Climb Progress: iteration 69/200 | Chosen step:             Local Masking | Current Fitness: -0.864787 | Best Fitness: -0.864787 | No Improvement Count: 0       
+Hill Climb Progress: iteration 70/200 | Chosen step:       No better mutations | Current Fitness: -0.864787 | Best Fitness: -0.864787 | No Improvement Count: 1       
+Hill Climb Progress: iteration 71/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.868634 | Best Fitness: -0.868634 | No Improvement Count: 0       
+Hill Climb Progress: iteration 72/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.875795 | Best Fitness: -0.875795 | No Improvement Count: 0       
+Hill Climb Progress: iteration 73/200 | Chosen step:             Local Masking | Current Fitness: -0.877406 | Best Fitness: -0.877406 | No Improvement Count: 0       
+Hill Climb Progress: iteration 74/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.881100 | Best Fitness: -0.881100 | No Improvement Count: 0       
+Hill Climb Progress: iteration 75/200 | Chosen step:            Additive Noise | Current Fitness: -0.887253 | Best Fitness: -0.887253 | No Improvement Count: 0       
+Hill Climb Progress: iteration 76/200 | Chosen step:             Local Masking | Current Fitness: -0.891691 | Best Fitness: -0.891691 | No Improvement Count: 0       
+Hill Climb Progress: iteration 77/200 | Chosen step:             Local Masking | Current Fitness: -0.892776 | Best Fitness: -0.892776 | No Improvement Count: 0       
+Hill Climb Progress: iteration 78/200 | Chosen step:      Channel Perturbation | Current Fitness: -0.895712 | Best Fitness: -0.895712 | No Improvement Count: 0       
+Hill Climb Progress: iteration 79/200 | Chosen step:        Lines Perturbation | Current Fitness: -0.896779 | Best Fitness: -0.896779 | No Improvement Count: 0       
+
+Mutation counts:
+ Counter({'Lines Perturbation': 25, 'Channel Perturbation': 21, 'Additive Noise': 20, 'No better mutations': 8, 'Local Masking': 7})
+
+Final fitness: -0.9014377
+
+Final predictions:
+('n04557648', 'water_bottle', 0.9014377)
+('n04254120', 'soap_dispenser', 0.02136626)
+('n04560804', 'water_jug', 0.017599305)
+('n03825788', 'nipple', 0.01124206)
+('n03887697', 'paper_towel', 0.010442878)
+
+
+
+====== Processing image 10/10 ======
+Loaded image: images/viaduct.jpeg
+Target label: viaduct
+
+Baseline predictions (top-5):
+viaduct               prob=0.99911
+pier                  prob=0.00077
+suspension_bridge     prob=0.00010
+dam                   prob=0.00001
+steel_arch_bridge     prob=0.00001
+
+
+Hill Climb Progress: iteration 0/200 | Chosen step:            Additive Noise | Current Fitness: 0.998905 | Best Fitness: 0.998905 | No Improvement Count: 0
+Hill Climb Progress: iteration 1/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.998679 | Best Fitness: 0.998679 | No Improvement Count: 0
+Hill Climb Progress: iteration 2/200 | Chosen step:            Additive Noise | Current Fitness: 0.998491 | Best Fitness: 0.998491 | No Improvement Count: 0
+Hill Climb Progress: iteration 3/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.998237 | Best Fitness: 0.998237 | No Improvement Count: 0
+Hill Climb Progress: iteration 4/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.997819 | Best Fitness: 0.997819 | No Improvement Count: 0
+Hill Climb Progress: iteration 5/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.997384 | Best Fitness: 0.997384 | No Improvement Count: 0
+Hill Climb Progress: iteration 6/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.996876 | Best Fitness: 0.996876 | No Improvement Count: 0
+Hill Climb Progress: iteration 7/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.996462 | Best Fitness: 0.996462 | No Improvement Count: 0
+Hill Climb Progress: iteration 8/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.995680 | Best Fitness: 0.995680 | No Improvement Count: 0
+Hill Climb Progress: iteration 9/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.995383 | Best Fitness: 0.995383 | No Improvement Count: 0
+Hill Climb Progress: iteration 10/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.995133 | Best Fitness: 0.995133 | No Improvement Count: 0
+Hill Climb Progress: iteration 11/200 | Chosen step:            Additive Noise | Current Fitness: 0.994896 | Best Fitness: 0.994896 | No Improvement Count: 0
+Hill Climb Progress: iteration 12/200 | Chosen step:            Additive Noise | Current Fitness: 0.994349 | Best Fitness: 0.994349 | No Improvement Count: 0
+Hill Climb Progress: iteration 13/200 | Chosen step:            Additive Noise | Current Fitness: 0.993745 | Best Fitness: 0.993745 | No Improvement Count: 0
+Hill Climb Progress: iteration 14/200 | Chosen step:            Additive Noise | Current Fitness: 0.992479 | Best Fitness: 0.992479 | No Improvement Count: 0
+Hill Climb Progress: iteration 15/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.991951 | Best Fitness: 0.991951 | No Improvement Count: 0
+Hill Climb Progress: iteration 16/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.991844 | Best Fitness: 0.991844 | No Improvement Count: 0
+Hill Climb Progress: iteration 17/200 | Chosen step:            Additive Noise | Current Fitness: 0.990400 | Best Fitness: 0.990400 | No Improvement Count: 0
+Hill Climb Progress: iteration 18/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.988632 | Best Fitness: 0.988632 | No Improvement Count: 0
+Hill Climb Progress: iteration 19/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.987238 | Best Fitness: 0.987238 | No Improvement Count: 0
+Hill Climb Progress: iteration 20/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.986520 | Best Fitness: 0.986520 | No Improvement Count: 0
+Hill Climb Progress: iteration 21/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.986242 | Best Fitness: 0.986242 | No Improvement Count: 0
+Hill Climb Progress: iteration 22/200 | Chosen step:            Additive Noise | Current Fitness: 0.984483 | Best Fitness: 0.984483 | No Improvement Count: 0
+Hill Climb Progress: iteration 23/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.982754 | Best Fitness: 0.982754 | No Improvement Count: 0
+Hill Climb Progress: iteration 24/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.982622 | Best Fitness: 0.982622 | No Improvement Count: 0
+Hill Climb Progress: iteration 25/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.982229 | Best Fitness: 0.982229 | No Improvement Count: 0
+Hill Climb Progress: iteration 26/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.980299 | Best Fitness: 0.980299 | No Improvement Count: 0
+Hill Climb Progress: iteration 27/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.978579 | Best Fitness: 0.978579 | No Improvement Count: 0
+Hill Climb Progress: iteration 28/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.975870 | Best Fitness: 0.975870 | No Improvement Count: 0
+Hill Climb Progress: iteration 29/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.975838 | Best Fitness: 0.975838 | No Improvement Count: 0
+Hill Climb Progress: iteration 30/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.973620 | Best Fitness: 0.973620 | No Improvement Count: 0
+Hill Climb Progress: iteration 31/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.972249 | Best Fitness: 0.972249 | No Improvement Count: 0
+Hill Climb Progress: iteration 32/200 | Chosen step:            Additive Noise | Current Fitness: 0.970690 | Best Fitness: 0.970690 | No Improvement Count: 0
+Hill Climb Progress: iteration 33/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.967991 | Best Fitness: 0.967991 | No Improvement Count: 0
+Hill Climb Progress: iteration 34/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.967560 | Best Fitness: 0.967560 | No Improvement Count: 0
+Hill Climb Progress: iteration 35/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.966158 | Best Fitness: 0.966158 | No Improvement Count: 0
+Hill Climb Progress: iteration 36/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.962804 | Best Fitness: 0.962804 | No Improvement Count: 0
+Hill Climb Progress: iteration 37/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.961867 | Best Fitness: 0.961867 | No Improvement Count: 0
+Hill Climb Progress: iteration 38/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.961231 | Best Fitness: 0.961231 | No Improvement Count: 0
+Hill Climb Progress: iteration 39/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.960379 | Best Fitness: 0.960379 | No Improvement Count: 0
+Hill Climb Progress: iteration 40/200 | Chosen step:            Additive Noise | Current Fitness: 0.957422 | Best Fitness: 0.957422 | No Improvement Count: 0
+Hill Climb Progress: iteration 41/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.953407 | Best Fitness: 0.953407 | No Improvement Count: 0
+Hill Climb Progress: iteration 42/200 | Chosen step:            Additive Noise | Current Fitness: 0.952284 | Best Fitness: 0.952284 | No Improvement Count: 0
+Hill Climb Progress: iteration 43/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.950196 | Best Fitness: 0.950196 | No Improvement Count: 0
+Hill Climb Progress: iteration 44/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.944285 | Best Fitness: 0.944285 | No Improvement Count: 0
+Hill Climb Progress: iteration 45/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.943926 | Best Fitness: 0.943926 | No Improvement Count: 0
+Hill Climb Progress: iteration 46/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.943815 | Best Fitness: 0.943815 | No Improvement Count: 0
+Hill Climb Progress: iteration 47/200 | Chosen step:       No better mutations | Current Fitness: 0.943815 | Best Fitness: 0.943815 | No Improvement Count: 1
+Hill Climb Progress: iteration 48/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.942610 | Best Fitness: 0.942610 | No Improvement Count: 0
+Hill Climb Progress: iteration 49/200 | Chosen step:            Additive Noise | Current Fitness: 0.940132 | Best Fitness: 0.940132 | No Improvement Count: 0
+Hill Climb Progress: iteration 50/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.937936 | Best Fitness: 0.937936 | No Improvement Count: 0
+Hill Climb Progress: iteration 51/200 | Chosen step:            Additive Noise | Current Fitness: 0.935733 | Best Fitness: 0.935733 | No Improvement Count: 0
+Hill Climb Progress: iteration 52/200 | Chosen step:       No better mutations | Current Fitness: 0.935733 | Best Fitness: 0.935733 | No Improvement Count: 1
+Hill Climb Progress: iteration 53/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.933826 | Best Fitness: 0.933826 | No Improvement Count: 0
+Hill Climb Progress: iteration 54/200 | Chosen step:       No better mutations | Current Fitness: 0.933826 | Best Fitness: 0.933826 | No Improvement Count: 1
+Hill Climb Progress: iteration 55/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.930887 | Best Fitness: 0.930887 | No Improvement Count: 0
+Hill Climb Progress: iteration 56/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.929578 | Best Fitness: 0.929578 | No Improvement Count: 0
+Hill Climb Progress: iteration 57/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.925281 | Best Fitness: 0.925281 | No Improvement Count: 0
+Hill Climb Progress: iteration 58/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.918238 | Best Fitness: 0.918238 | No Improvement Count: 0
+Hill Climb Progress: iteration 59/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.908217 | Best Fitness: 0.908217 | No Improvement Count: 0
+Hill Climb Progress: iteration 60/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.907124 | Best Fitness: 0.907124 | No Improvement Count: 0
+Hill Climb Progress: iteration 61/200 | Chosen step:            Additive Noise | Current Fitness: 0.899180 | Best Fitness: 0.899180 | No Improvement Count: 0
+Hill Climb Progress: iteration 62/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.893192 | Best Fitness: 0.893192 | No Improvement Count: 0
+Hill Climb Progress: iteration 63/200 | Chosen step:       No better mutations | Current Fitness: 0.893192 | Best Fitness: 0.893192 | No Improvement Count: 1
+Hill Climb Progress: iteration 64/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.881436 | Best Fitness: 0.881436 | No Improvement Count: 0
+Hill Climb Progress: iteration 65/200 | Chosen step:            Additive Noise | Current Fitness: 0.880744 | Best Fitness: 0.880744 | No Improvement Count: 0
+Hill Climb Progress: iteration 66/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.874121 | Best Fitness: 0.874121 | No Improvement Count: 0
+Hill Climb Progress: iteration 67/200 | Chosen step:       No better mutations | Current Fitness: 0.874121 | Best Fitness: 0.874121 | No Improvement Count: 1
+Hill Climb Progress: iteration 68/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.873633 | Best Fitness: 0.873633 | No Improvement Count: 0
+Hill Climb Progress: iteration 69/200 | Chosen step:            Additive Noise | Current Fitness: 0.866642 | Best Fitness: 0.866642 | No Improvement Count: 0
+Hill Climb Progress: iteration 70/200 | Chosen step:            Additive Noise | Current Fitness: 0.859928 | Best Fitness: 0.859928 | No Improvement Count: 0
+Hill Climb Progress: iteration 71/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.854489 | Best Fitness: 0.854489 | No Improvement Count: 0
+Hill Climb Progress: iteration 72/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.852249 | Best Fitness: 0.852249 | No Improvement Count: 0
+Hill Climb Progress: iteration 73/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.845645 | Best Fitness: 0.845645 | No Improvement Count: 0
+Hill Climb Progress: iteration 74/200 | Chosen step:       No better mutations | Current Fitness: 0.845645 | Best Fitness: 0.845645 | No Improvement Count: 1
+Hill Climb Progress: iteration 75/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.844496 | Best Fitness: 0.844496 | No Improvement Count: 0
+Hill Climb Progress: iteration 76/200 | Chosen step:       No better mutations | Current Fitness: 0.844496 | Best Fitness: 0.844496 | No Improvement Count: 1
+Hill Climb Progress: iteration 77/200 | Chosen step:       No better mutations | Current Fitness: 0.844496 | Best Fitness: 0.844496 | No Improvement Count: 2
+Hill Climb Progress: iteration 78/200 | Chosen step:            Additive Noise | Current Fitness: 0.836635 | Best Fitness: 0.836635 | No Improvement Count: 0
+Hill Climb Progress: iteration 79/200 | Chosen step:       No better mutations | Current Fitness: 0.836635 | Best Fitness: 0.836635 | No Improvement Count: 1
+Hill Climb Progress: iteration 80/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.819345 | Best Fitness: 0.819345 | No Improvement Count: 0
+Hill Climb Progress: iteration 81/200 | Chosen step:            Additive Noise | Current Fitness: 0.804717 | Best Fitness: 0.804717 | No Improvement Count: 0
+Hill Climb Progress: iteration 82/200 | Chosen step:             Local Masking | Current Fitness: 0.796429 | Best Fitness: 0.796429 | No Improvement Count: 0
+Hill Climb Progress: iteration 83/200 | Chosen step:       No better mutations | Current Fitness: 0.796429 | Best Fitness: 0.796429 | No Improvement Count: 1
+Hill Climb Progress: iteration 84/200 | Chosen step:       No better mutations | Current Fitness: 0.796429 | Best Fitness: 0.796429 | No Improvement Count: 2
+Hill Climb Progress: iteration 85/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.793096 | Best Fitness: 0.793096 | No Improvement Count: 0
+Hill Climb Progress: iteration 86/200 | Chosen step:             Local Masking | Current Fitness: 0.792689 | Best Fitness: 0.792689 | No Improvement Count: 0
+Hill Climb Progress: iteration 87/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.782526 | Best Fitness: 0.782526 | No Improvement Count: 0
+Hill Climb Progress: iteration 88/200 | Chosen step:       No better mutations | Current Fitness: 0.782526 | Best Fitness: 0.782526 | No Improvement Count: 1
+Hill Climb Progress: iteration 89/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.779103 | Best Fitness: 0.779103 | No Improvement Count: 0
+Hill Climb Progress: iteration 90/200 | Chosen step:             Local Masking | Current Fitness: 0.777685 | Best Fitness: 0.777685 | No Improvement Count: 0
+Hill Climb Progress: iteration 91/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.773636 | Best Fitness: 0.773636 | No Improvement Count: 0
+Hill Climb Progress: iteration 92/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.760284 | Best Fitness: 0.760284 | No Improvement Count: 0
+Hill Climb Progress: iteration 93/200 | Chosen step:             Local Masking | Current Fitness: 0.758952 | Best Fitness: 0.758952 | No Improvement Count: 0
+Hill Climb Progress: iteration 94/200 | Chosen step:       No better mutations | Current Fitness: 0.758952 | Best Fitness: 0.758952 | No Improvement Count: 1
+Hill Climb Progress: iteration 95/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.752894 | Best Fitness: 0.752894 | No Improvement Count: 0
+Hill Climb Progress: iteration 96/200 | Chosen step:             Local Masking | Current Fitness: 0.747136 | Best Fitness: 0.747136 | No Improvement Count: 0
+Hill Climb Progress: iteration 97/200 | Chosen step:       No better mutations | Current Fitness: 0.747136 | Best Fitness: 0.747136 | No Improvement Count: 1
+Hill Climb Progress: iteration 98/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.737317 | Best Fitness: 0.737317 | No Improvement Count: 0
+Hill Climb Progress: iteration 99/200 | Chosen step:             Local Masking | Current Fitness: 0.734314 | Best Fitness: 0.734314 | No Improvement Count: 0
+Hill Climb Progress: iteration 100/200 | Chosen step:             Local Masking | Current Fitness: 0.731720 | Best Fitness: 0.731720 | No Improvement Count: 0        
+Hill Climb Progress: iteration 101/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.726006 | Best Fitness: 0.726006 | No Improvement Count: 0        
+Hill Climb Progress: iteration 102/200 | Chosen step:       No better mutations | Current Fitness: 0.726006 | Best Fitness: 0.726006 | No Improvement Count: 1        
+Hill Climb Progress: iteration 103/200 | Chosen step:       No better mutations | Current Fitness: 0.726006 | Best Fitness: 0.726006 | No Improvement Count: 2        
+Hill Climb Progress: iteration 104/200 | Chosen step:       No better mutations | Current Fitness: 0.726006 | Best Fitness: 0.726006 | No Improvement Count: 3        
+Hill Climb Progress: iteration 105/200 | Chosen step:       No better mutations | Current Fitness: 0.726006 | Best Fitness: 0.726006 | No Improvement Count: 4        
+Hill Climb Progress: iteration 106/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.723125 | Best Fitness: 0.723125 | No Improvement Count: 0        
+Hill Climb Progress: iteration 107/200 | Chosen step:       No better mutations | Current Fitness: 0.723125 | Best Fitness: 0.723125 | No Improvement Count: 1        
+Hill Climb Progress: iteration 108/200 | Chosen step:            Additive Noise | Current Fitness: 0.722978 | Best Fitness: 0.722978 | No Improvement Count: 0        
+Hill Climb Progress: iteration 109/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.718640 | Best Fitness: 0.718640 | No Improvement Count: 0        
+Hill Climb Progress: iteration 110/200 | Chosen step:       No better mutations | Current Fitness: 0.718640 | Best Fitness: 0.718640 | No Improvement Count: 1        
+Hill Climb Progress: iteration 111/200 | Chosen step:       No better mutations | Current Fitness: 0.718640 | Best Fitness: 0.718640 | No Improvement Count: 2        
+Hill Climb Progress: iteration 112/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.709876 | Best Fitness: 0.709876 | No Improvement Count: 0        
+Hill Climb Progress: iteration 113/200 | Chosen step:      Channel Perturbation | Current Fitness: 0.698658 | Best Fitness: 0.698658 | No Improvement Count: 0        
+Hill Climb Progress: iteration 114/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.696009 | Best Fitness: 0.696009 | No Improvement Count: 0        
+Hill Climb Progress: iteration 115/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.694851 | Best Fitness: 0.694851 | No Improvement Count: 0        
+Hill Climb Progress: iteration 116/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.675549 | Best Fitness: 0.675549 | No Improvement Count: 0        
+Hill Climb Progress: iteration 117/200 | Chosen step:        Lines Perturbation | Current Fitness: 0.672329 | Best Fitness: 0.672329 | No Improvement Count: 0        
+Hill Climb Progress: iteration 118/200 | Chosen step:       No better mutations | Current Fitness: 0.672329 | Best Fitness: 0.672329 | No Improvement Count: 1        
+Hill Climb Progress: iteration 119/200 | Chosen step:       No better mutations | Current Fitness: 0.672329 | Best Fitness: 0.672329 | No Improvement Count: 2        
+Hill Climb Progress: iteration 120/200 | Chosen step:       No better mutations | Current Fitness: 0.672329 | Best Fitness: 0.672329 | No Improvement Count: 3        
+Hill Climb Progress: iteration 121/200 | Chosen step:       No better mutations | Current Fitness: 0.672329 | Best Fitness: 0.672329 | No Improvement Count: 4        
+Hill Climb Progress: iteration 122/200 | Chosen step:       No better mutations | Current Fitness: 0.672329 | Best Fitness: 0.672329 | No Improvement Count: 5        
+Hill Climb Progress: iteration 123/200 | Chosen step:       No better mutations | Current Fitness: 0.672329 | Best Fitness: 0.672329 | No Improvement Count: 6        
+Hill Climb Progress: iteration 124/200 | Chosen step:       No better mutations | Current Fitness: 0.672329 | Best Fitness: 0.672329 | No Improvement Count: 7        
+Hill Climb Progress: iteration 125/200 | Chosen step:       No better mutations | Current Fitness: 0.672329 | Best Fitness: 0.672329 | No Improvement Count: 8        
+Hill Climb Progress: iteration 126/200 | Chosen step:       No better mutations | Current Fitness: 0.672329 | Best Fitness: 0.672329 | No Improvement Count: 9        
+
+Mutation counts:
+ Counter({'Lines Perturbation': 47, 'No better mutations': 31, 'Channel Perturbation': 23, 'Additive Noise': 20, 'Local Masking': 7})
+
+Final fitness: 0.67232895
+
+Final predictions:
+('n04532670', 'viaduct', 0.67232895)
+('n03933933', 'pier', 0.31303015)
+('n04366367', 'suspension_bridge', 0.009668646)
+('n04311004', 'steel_arch_bridge', 0.0029013879)
+('n03160309', 'dam', 0.0015119332)

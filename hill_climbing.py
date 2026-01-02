@@ -138,14 +138,25 @@ def select_best(
     Returns:
         (best_image, best_fitness)
     """
+    batch = np.array(candidates)
+    batch_predictions = model.predict(batch, verbose=0)
+    batch_decoded = decode_predictions(batch_predictions, top=1)
+
     lowest_score = float('inf')
     best_candidate = candidates[0] # Avoids type warning
 
-    for candidate in candidates:
-        fitness = compute_fitness(candidate, model, target_label)
+    for i, candidates in enumerate(candidates):
+        predicted_label = batch_decoded[i][0][1]
+        predicted_score = batch_decoded[i][0][2]
+
+        if predicted_label == target_label:
+            fitness = predicted_score
+        else:
+            fitness = - predicted_score
+
         if fitness < lowest_score:
             lowest_score = fitness
-            best_candidate = candidate
+            best_candidate = candidates
 
     return best_candidate, lowest_score
 
